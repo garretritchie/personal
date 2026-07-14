@@ -387,7 +387,7 @@ export const contactOptions = [
   {
     label: "Collaboration / Networking",
     description:
-      "AI apps, business ideas, project feedback, professional networking, speaking, instruction, and practical automation.",
+      "AI apps, business ideas, project feedback, professional networking, speaking, teaching, and practical automation.",
     lines: [],
     actions: [
       { label: "242-535-7735", value: "242-535-7735", href: "tel:+12425357735", detail: "Nassau, Bahamas" },

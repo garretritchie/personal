@@ -1,4 +1,4 @@
-import { SiteFooter, SiteHeader } from "../components";
+import { LinkedText, SiteFooter, SiteHeader } from "../components";
 import { fieldNotes, profileHighlights } from "../site-content";
 
 const dayOneCards = [
@@ -57,7 +57,7 @@ export default function AboutPage() {
               <article className="profile-card" key={item.title}>
                 <span>{item.label}</span>
                 <h3>{item.title}</h3>
-                <p>{item.detail}</p>
+                <p><LinkedText text={item.detail} /></p>
               </article>
             ))}
           </div>

@@ -17,6 +17,59 @@ function isExternal(href: string) {
   return href.startsWith("https://");
 }
 
+const textLinks = [
+  { text: "Redstone Technology Solutions", href: "https://www.redstoneTS.com" },
+  { text: "Redstone Technology", href: "https://www.redstoneTS.com" },
+  { text: "Synergy Bahamas", href: "https://www.synergybahamas.com" },
+  { text: "teaching", href: "https://www.synergybahamas.com" },
+  { text: "Teaching", href: "https://www.synergybahamas.com" },
+];
+
+export function LinkedText({ text }: { text: string }) {
+  const matches = textLinks
+    .flatMap((link) => {
+      const index = text.indexOf(link.text);
+      return index >= 0 ? [{ ...link, index }] : [];
+    })
+    .sort((a, b) => a.index - b.index);
+
+  if (!matches.length) {
+    return <>{text}</>;
+  }
+
+  const parts = [];
+  let cursor = 0;
+
+  for (const match of matches) {
+    if (match.index < cursor) {
+      continue;
+    }
+
+    if (match.index > cursor) {
+      parts.push(text.slice(cursor, match.index));
+    }
+
+    parts.push(
+      <a
+        className="inline-text-link"
+        href={match.href}
+        key={`${match.text}-${match.index}`}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {match.text}
+      </a>,
+    );
+    cursor = match.index + match.text.length;
+  }
+
+  if (cursor < text.length) {
+    parts.push(text.slice(cursor));
+  }
+
+  return <>{parts}</>;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -166,17 +219,18 @@ export function SiteFooter() {
         <p className="section-kicker">Get in touch</p>
         <h2>Let&apos;s build something useful.</h2>
         <p>
-          Reach me for Redstone Technology Solutions, collaboration, project feedback,
-          professional networking, technical instruction, or practical automation ideas.
+          <LinkedText text="Reach me for Redstone Technology Solutions, collaboration, project feedback, professional networking, teaching, or practical automation ideas." />
         </p>
       </div>
       <div className="footer-contact-grid">
         {contactOptions.map((option) => (
           <section className="footer-contact-card" key={option.label} aria-label={option.label}>
             <span>{option.label}</span>
-            <p>{option.description}</p>
+            <p><LinkedText text={option.description} /></p>
             {option.lines.map((line) => (
-              <strong key={line}>{line}</strong>
+              <strong key={line}>
+                <LinkedText text={line} />
+              </strong>
             ))}
             <div>
               {option.actions.map((action) => (
@@ -338,43 +392,43 @@ export function ProjectWorkbench() {
           <dl className="case-study-grid">
             <div>
               <dt>Context</dt>
-              <dd>{selectedProject.caseStudy.context}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.context} /></dd>
             </div>
             <div>
               <dt>Problem</dt>
-              <dd>{selectedProject.caseStudy.problem}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.problem} /></dd>
             </div>
             <div>
               <dt>Constraints</dt>
-              <dd>{selectedProject.caseStudy.constraints}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.constraints} /></dd>
             </div>
             <div>
               <dt>Role</dt>
-              <dd>{selectedProject.caseStudy.role}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.role} /></dd>
             </div>
             <div>
               <dt>Process</dt>
-              <dd>{selectedProject.caseStudy.process}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.process} /></dd>
             </div>
             <div>
               <dt>Key decisions</dt>
-              <dd>{selectedProject.caseStudy.keyDecisions}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.keyDecisions} /></dd>
             </div>
             <div>
               <dt>Architecture / interface</dt>
-              <dd>{selectedProject.caseStudy.architecture}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.architecture} /></dd>
             </div>
             <div>
               <dt>Outcome</dt>
-              <dd>{selectedProject.caseStudy.outcome}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.outcome} /></dd>
             </div>
             <div>
               <dt>Lessons learned</dt>
-              <dd>{selectedProject.caseStudy.lessons}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.lessons} /></dd>
             </div>
             <div>
               <dt>Current status</dt>
-              <dd>{selectedProject.caseStudy.currentStatus}</dd>
+              <dd><LinkedText text={selectedProject.caseStudy.currentStatus} /></dd>
             </div>
           </dl>
         </aside>
@@ -401,9 +455,11 @@ export function ContactCards() {
       {contactOptions.map((option) => (
         <article className="contact-card" key={option.label}>
           <span>{option.label}</span>
-          <p>{option.description}</p>
+          <p><LinkedText text={option.description} /></p>
           {option.lines.map((line) => (
-            <strong key={line}>{line}</strong>
+            <strong key={line}>
+              <LinkedText text={line} />
+            </strong>
           ))}
           <div className="contact-actions">
             {option.actions.map((action) => (
