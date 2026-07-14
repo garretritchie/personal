@@ -160,35 +160,38 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  const [localTime, setLocalTime] = useState("");
-
-  useEffect(() => {
-    const update = () => {
-      setLocalTime(
-        new Intl.DateTimeFormat("en-BS", {
-          timeZone: "America/Nassau",
-          hour: "numeric",
-          minute: "2-digit",
-        }).format(new Date()),
-      );
-    };
-
-    update();
-    const interval = window.setInterval(update, 30000);
-    return () => window.clearInterval(interval);
-  }, []);
-
   return (
-    <footer className="system-footer">
-      <div>
+    <footer className="system-footer" id="footer-contact">
+      <div className="footer-intro">
+        <p className="section-kicker">Get in touch</p>
+        <h2>Let&apos;s build something useful.</h2>
+        <p>
+          Reach me for Redstone Technology Solutions, collaboration, project feedback,
+          professional networking, technical instruction, or practical automation ideas.
+        </p>
+      </div>
+      <div className="footer-contact-grid">
+        {contactOptions.map((option) => (
+          <section className="footer-contact-card" key={option.label} aria-label={option.label}>
+            <span>{option.label}</span>
+            <p>{option.description}</p>
+            {option.lines.map((line) => (
+              <strong key={line}>{line}</strong>
+            ))}
+            <div>
+              {option.actions.map((action) => (
+                <a href={action.href} key={action.value}>
+                  {action.label}
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+      <div className="footer-bottom">
         <span>Garret Ritchie</span>
         <a href="https://www.garretritchie.com">www.garretritchie.com</a>
-      </div>
-      <div>
-        <span>Nassau time {localTime || "--:--"}</span>
-        <span>Day 1 of 1</span>
-        <span>Vinext / React / Sites</span>
-        <Link href="/">Return home</Link>
+        <Link href="/#top">Back to top</Link>
       </div>
     </footer>
   );
