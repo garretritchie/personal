@@ -54,7 +54,7 @@ main {
 
 .hero {
   min-height: 92vh;
-  padding: 24px clamp(18px, 4vw, 64px) 48px;
+  padding: 24px clamp(18px, 4vw, 54px) 48px;
   background: linear-gradient(135deg, #f7f0e4 0%, #efe1cc 54%, #d8ccb8 100%);
   border-bottom: 1px solid var(--line);
 }
@@ -100,10 +100,10 @@ footer a:hover {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.8fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(430px, 0.98fr);
   align-items: center;
-  gap: clamp(32px, 5vw, 76px);
-  max-width: 1180px;
+  gap: clamp(28px, 4vw, 58px);
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -175,15 +175,18 @@ h1 {
 .portrait-panel {
   position: relative;
   margin: 0;
+  justify-self: end;
+  width: min(100%, 620px);
 }
 
 .portrait-panel > img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 53% center;
+  object-position: 67% center;
   border: 1px solid rgba(23, 24, 23, 0.2);
-  box-shadow: 16px 16px 0 var(--sage);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  box-shadow: 18px 18px 0 var(--sage);
 }
 
 .portrait-panel figcaption {
@@ -503,6 +506,7 @@ footer {
 
   .portrait-panel > img {
     aspect-ratio: 16 / 11;
+    object-position: 68% center;
   }
 }
 
@@ -529,6 +533,8 @@ footer {
   }
 
   .portrait-panel > img {
+    aspect-ratio: 4 / 5;
+    object-position: 68% center;
     box-shadow: 8px 8px 0 var(--sage);
   }
 
