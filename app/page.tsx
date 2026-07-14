@@ -2,32 +2,67 @@ import Script from "next/script";
 
 const projects = [
   {
-    name: "AI Idea Lab",
-    status: "Exploring",
+    name: "Redstone MSP App",
+    status: "Operations platform",
+    type: "Managed services",
     description:
-      "Small experiments, prompts, and prototype apps for testing passive-income and side-hustle ideas.",
-    href: "#projects",
+      "A managed-service-provider workspace for Redstone Technology. The app is designed around service workflows, client operations, ticket visibility, subscriptions, vendor tracking, and the kind of internal systems an MSP needs to run cleaner day to day.",
+    href: "https://msp2.rdstn.com",
+    linkLabel: "Open app",
   },
   {
-    name: "Business Builder Toolkit",
-    status: "In progress",
+    name: "DayTrading App",
+    status: "Research build",
+    type: "Trading automation",
     description:
-      "Practical calculators, checklists, and workflow helpers for turning rough ideas into something usable.",
+      "A trading research and automation project focused on strategy testing, plain-English trading logic, risk checks, paper-trading workflows, and disciplined evaluation before any real-world deployment.",
     href: "#projects",
+    linkLabel: "In Codex",
   },
   {
-    name: "Automation Notebook",
-    status: "Private beta",
+    name: "Nychia",
+    status: "Concept venture",
+    type: "Business model",
     description:
-      "A collection of personal automations and AI workflows that save time or remove repetitive work.",
+      "A venture concept and planning workspace for turning a service idea into a sharper business model. It includes strategy work, market thinking, financial modeling, launch planning, and positioning research.",
     href: "#projects",
+    linkLabel: "In development",
   },
   {
-    name: "Family & Friends Portal",
-    status: "Open",
+    name: "pebahamas.org",
+    status: "CMS build",
+    type: "Public association site",
     description:
-      "A simple place to share what I am building, what I am learning, and what is ready to try.",
-    href: "mailto:hello@garretritchie.com",
+      "A modernized web presence for the Professional Engineers Board of The Bahamas, with a content management layer for news, pages, registered engineer information, forms, and administrative publishing workflows.",
+    href: "https://www.pebahamas.org",
+    linkLabel: "Visit site",
+  },
+  {
+    name: "Project Zion 2.0",
+    status: "MVP build",
+    type: "Personal knowledge system",
+    description:
+      "A second-generation personal operating system for organizing sensitive knowledge, decisions, documents, relationship context, project memory, and AI-assisted workflows with clearer boundaries around what can be shared.",
+    href: "#projects",
+    linkLabel: "In Codex",
+  },
+  {
+    name: "bitsbytescafe.com",
+    status: "CMS build",
+    type: "Cafe website",
+    description:
+      "A cafe website and content system for Bits & Bytes Cafe, built around menu content, public pages, images, updates, and a maintainable publishing workflow that can grow beyond a static brochure site.",
+    href: "https://bitsbytescafe.com",
+    linkLabel: "Visit site",
+  },
+  {
+    name: "synergybahamas.com",
+    status: "LMS + CMS",
+    type: "Education platform",
+    description:
+      "A future-facing Synergy Bahamas platform combining a public website, content management, and learning-management capabilities for courses, training programs, student engagement, and long-term education operations.",
+    href: "https://synergybahamas.com",
+    linkLabel: "Visit site",
   },
 ];
 
@@ -226,11 +261,18 @@ export default function Home() {
 
         <div className="project-grid">
           {projects.map((project) => (
-            <a className="project-card" href={project.href} key={project.name}>
+            <a
+              className="project-card"
+              href={project.href}
+              key={project.name}
+              target={project.href.startsWith("https://") ? "_blank" : undefined}
+              rel={project.href.startsWith("https://") ? "noreferrer" : undefined}
+            >
               <span className="project-status">{project.status}</span>
               <h3>{project.name}</h3>
+              <span className="project-type">{project.type}</span>
               <p>{project.description}</p>
-              <span className="project-link">Open</span>
+              <span className="project-link">{project.linkLabel}</span>
             </a>
           ))}
         </div>
