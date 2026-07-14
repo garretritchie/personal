@@ -34,7 +34,6 @@ export type Project = {
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/contact", label: "Contact" },
@@ -49,6 +48,7 @@ export const workbenchFilters: ProjectLifecycle[] = [
   "Live",
 ];
 
+// Retained for the future portfolio redesign; not currently rendered publicly.
 export const projects: Project[] = [
   {
     slug: "redstone-msp",

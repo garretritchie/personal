@@ -1,13 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import {
-  ProjectSummaryCard,
   SiteFooter,
   SiteHeader,
 } from "./components";
-import { projects } from "./site-content";
 
-const featuredProjects = projects.slice(0, 3);
 const signalWords = ["Observe", "Question", "Learn", "Build", "Experience", "Improve"];
 
 export default function Home() {
@@ -30,8 +27,8 @@ export default function Home() {
               and share what I learn along the way.
             </p>
             <div className="hero-actions" aria-label="Page actions">
-              <Link className="primary-action" href="/work">
-                View projects
+              <Link className="primary-action" href="/contact">
+                Start a conversation
                 <span aria-hidden="true">-&gt;</span>
               </Link>
               <Link className="secondary-action" href="/about">About Garret</Link>
@@ -77,26 +74,6 @@ export default function Home() {
             <Link className="secondary-action" href="/about">About Garret</Link>
             <Link className="secondary-action" href="/capabilities">Capabilities</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section-shell home-work-section" aria-labelledby="home-work-title">
-        <div className="section-heading">
-          <div>
-            <p className="section-kicker">Selected work</p>
-            <h2 id="home-work-title">A few things currently in motion.</h2>
-          </div>
-        </div>
-        <div className="project-grid">
-          {featuredProjects.map((project, index) => (
-            <ProjectSummaryCard project={project} index={index} key={project.slug} />
-          ))}
-        </div>
-        <div className="section-action-row">
-          <Link className="primary-action" href="/work">
-            Open project portfolio
-            <span aria-hidden="true">-&gt;</span>
-          </Link>
         </div>
       </section>
 
