@@ -142,15 +142,22 @@ export default function Home() {
 
         <div className="hero-grid" id="top">
           <div className="hero-copy">
+            <p className="availability-pill">
+              <span aria-hidden="true" />
+              Available for a new project
+            </p>
             <p className="eyebrow">Personal portal / AI experiments / side projects</p>
-            <h1 id="hero-title">Building small useful things, one hard lesson at a time.</h1>
+            <h1 id="hero-title">I'm Garret. Building small useful things.</h1>
             <p className="hero-lede">
               I am collecting my AI-powered web apps, business idea tests, and practical
               automation projects here so colleagues, friends, and collaborators can see
               what I am working on.
             </p>
             <div className="hero-actions" aria-label="Page actions">
-              <a className="primary-action" href="#projects">View the project directory</a>
+              <a className="primary-action" href="#projects">
+                View my projects
+                <span aria-hidden="true">-&gt;</span>
+              </a>
               <a className="secondary-action" href="#contact">Get in touch</a>
             </div>
           </div>
