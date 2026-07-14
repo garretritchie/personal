@@ -2,7 +2,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   contactOptions,
   navItems,
@@ -17,20 +18,143 @@ function isExternal(href: string) {
 }
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const revealItems = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        ".section-shell, .page-hero, .project-card, .profile-card, .capability-card, .field-note, .principle-card, .contact-card, .linkedin-panel, .case-study-panel",
+      ),
+    );
+    revealItems.forEach((item) => item.classList.add("reveal"));
+    document.documentElement.classList.add("motion-ready");
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", menuOpen);
+
+    function handleMenuKeys(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const menu = document.getElementById("mobile-menu");
+      const focusable = [
+        menuButtonRef.current,
+        ...(menu
+          ? Array.from(menu.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"))
+          : []),
+      ].filter(Boolean) as HTMLElement[];
+
+      if (!focusable.length) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    if (menuOpen) {
+      window.addEventListener("keydown", handleMenuKeys);
+    }
+
+    return () => {
+      document.body.classList.remove("menu-open");
+      window.removeEventListener("keydown", handleMenuKeys);
+    };
+  }, [menuOpen]);
+
+  function isActive(href: string) {
+    return href === "/" ? pathname === "/" : pathname.startsWith(href);
+  }
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
     <header className="site-nav" aria-label="Site navigation">
       <Link className="brand" href="/" aria-label="Garret Ritchie home">
         <img src="/gr-logo.png" alt="" />
         <span>Garret Ritchie</span>
       </Link>
-      <nav aria-label="Primary navigation">
+      <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <Link href={item.href} key={item.href}>
+          <Link
+            href={item.href}
+            key={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
             {item.label}
           </Link>
         ))}
       </nav>
       <Link className="nav-cta" href="/contact">Contact</Link>
+      <button
+        ref={menuButtonRef}
+        className="menu-toggle"
+        type="button"
+        aria-expanded={menuOpen}
+        aria-controls="mobile-menu"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span>{menuOpen ? "Close" : "Menu"}</span>
+        <i aria-hidden="true" />
+      </button>
+      <nav
+        id="mobile-menu"
+        className="mobile-nav-panel"
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+        data-open={menuOpen}
+      >
+        {navItems.map((item) => (
+          <Link
+            href={item.href}
+            key={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            onClick={closeMenu}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 }
@@ -70,26 +194,36 @@ export function SiteFooter() {
   );
 }
 
-export function ProjectSummaryCard({ project }: { project: Project }) {
+export function ProjectSummaryCard({ project, index = 0 }: { project: Project; index?: number }) {
   return (
     <Link
       className="project-card"
       href="/work"
       aria-label={`View ${project.name} in the project workbench`}
     >
-      <span className="project-status">{project.status}</span>
-      <h3>{project.name}</h3>
-      <div className="project-card-meta" aria-label={`${project.name} metadata`}>
-        <span>{project.lifecycle}</span>
-        <span>{project.type}</span>
+      <div className="project-visual" aria-hidden="true">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <strong>{project.name.slice(0, 2)}</strong>
       </div>
-      <p>{project.problem}</p>
-      <div className="project-card-tags" aria-label={`${project.name} capability tags`}>
-        {project.tags.slice(0, 3).map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
+      <div className="project-card-body">
+        <div className="project-card-topline">
+          <span className="project-status">{project.status}</span>
+          <span className="project-card-number">{String(index + 1).padStart(2, "0")}</span>
+        </div>
+        <h3>{project.name}</h3>
+        <div className="project-card-meta" aria-label={`${project.name} metadata`}>
+          <span>{project.lifecycle}</span>
+          <span>{project.type}</span>
+        </div>
+        <p>{project.problem}</p>
+        <div className="project-card-tags" aria-label={`${project.name} capability tags`}>
+          {project.tags.slice(0, 3).map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
       </div>
       <span className="project-role">{project.role}</span>
+      <span className="project-link-cue" aria-hidden="true">Open workbench -&gt;</span>
     </Link>
   );
 }
@@ -139,7 +273,7 @@ export function ProjectWorkbench() {
 
       <div className="workbench-layout">
         <div className="project-grid">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <button
               className={selectedProject.slug === project.slug ? "project-card selected" : "project-card"}
               key={project.slug}
@@ -147,19 +281,31 @@ export function ProjectWorkbench() {
               onClick={() => setSelectedProjectSlug(project.slug)}
               aria-pressed={selectedProject.slug === project.slug}
             >
-              <span className="project-status">{project.status}</span>
-              <h3>{project.name}</h3>
-              <div className="project-card-meta" aria-label={`${project.name} metadata`}>
-                <span>{project.lifecycle}</span>
-                <span>{project.type}</span>
+              <div className="project-visual" aria-hidden="true">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{project.name.slice(0, 2)}</strong>
               </div>
-              <p>{project.problem}</p>
-              <div className="project-card-tags" aria-label={`${project.name} capability tags`}>
-                {project.tags.slice(0, 3).map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+              <div className="project-card-body">
+                <div className="project-card-topline">
+                  <span className="project-status">{project.status}</span>
+                  <span className="project-card-number">{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <h3>{project.name}</h3>
+                <div className="project-card-meta" aria-label={`${project.name} metadata`}>
+                  <span>{project.lifecycle}</span>
+                  <span>{project.type}</span>
+                </div>
+                <p>{project.problem}</p>
+                <div className="project-card-tags" aria-label={`${project.name} capability tags`}>
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
               </div>
               <span className="project-role">{project.role}</span>
+              <span className="project-link-cue" aria-hidden="true">
+                {selectedProject.slug === project.slug ? "Selected" : "Review case"}
+              </span>
             </button>
           ))}
         </div>

@@ -8,6 +8,7 @@ import {
 import { projects } from "./site-content";
 
 const featuredProjects = projects.slice(0, 3);
+const signalWords = ["Observe", "Question", "Learn", "Build", "Experience", "Improve"];
 
 export default function Home() {
   return (
@@ -71,13 +72,14 @@ export default function Home() {
           </figure>
 
           <aside className="hero-rail" aria-label="Current focus and status">
-            <article>
-              <span className="rail-label">Day 1 of 1</span>
+            <article className="rail-primary">
+              <span className="rail-label">01 / Current focus</span>
+              <h2>AI tools, business experiments, and learning by building.</h2>
               <p>Learn from yesterday. Prepare for tomorrow. Live and build today.</p>
               <Link href="/about">Explore the idea</Link>
             </article>
             <article>
-              <span className="rail-label">Identity</span>
+              <span className="rail-label">02 / Identity</span>
               <ul>
                 <li>Observer</li>
                 <li>Questioner</li>
@@ -87,7 +89,7 @@ export default function Home() {
               <Link href="/about">View profile</Link>
             </article>
             <article>
-              <span className="rail-label">System status</span>
+              <span className="rail-label">03 / System status</span>
               <dl className="status-meter">
                 <div>
                   <dt>Curiosity</dt>
@@ -108,12 +110,11 @@ export default function Home() {
       </section>
 
       <section className="signal-strip" aria-label="Personal lab signals">
-        <span>Observe</span>
-        <span>Question</span>
-        <span>Learn</span>
-        <span>Build</span>
-        <span>Experience</span>
-        <span>Improve</span>
+        <div>
+          {[...signalWords, ...signalWords].map((word, index) => (
+            <span key={`${word}-${index}`}>{String((index % signalWords.length) + 1).padStart(2, "0")} {word}</span>
+          ))}
+        </div>
       </section>
 
       <section className="section-shell intro-section" aria-labelledby="home-about-title">
@@ -126,6 +127,11 @@ export default function Home() {
             I design and build practical systems at the intersection of technology,
             business, artificial intelligence, and human experience.
           </p>
+          <div className="thread-diagram" aria-hidden="true">
+            <span>observe</span>
+            <span>question</span>
+            <span>build</span>
+          </div>
           <div className="hero-actions">
             <Link className="secondary-action" href="/about">About Garret</Link>
             <Link className="secondary-action" href="/capabilities">Capabilities</Link>
@@ -141,8 +147,8 @@ export default function Home() {
           </div>
         </div>
         <div className="project-grid">
-          {featuredProjects.map((project) => (
-            <ProjectSummaryCard project={project} key={project.slug} />
+          {featuredProjects.map((project, index) => (
+            <ProjectSummaryCard project={project} index={index} key={project.slug} />
           ))}
         </div>
         <div className="section-action-row">
@@ -155,7 +161,7 @@ export default function Home() {
 
       <section className="section-shell quote-section" aria-labelledby="home-quote-title">
         <div className="quote-copy">
-          <p className="section-kicker">Why experience matters</p>
+          <p className="section-kicker">04 / Field notes</p>
           <h2 id="home-quote-title">Experience teaches what theory cannot.</h2>
           <p>
             Build the thing, test it in the real world, notice the friction, then make
