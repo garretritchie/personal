@@ -44,22 +44,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-(() => {
-  try {
-    const storedTheme = window.localStorage.getItem("garret-site-theme");
-    if (storedTheme === "studio") {
-      document.documentElement.dataset.theme = "studio";
-    }
-  } catch {}
-})();
-            `.trim(),
-          }}
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
