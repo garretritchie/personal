@@ -25,36 +25,17 @@ export default function Home() {
             <p className="eyebrow">Curious mind / Practical builder / Day 1 of 1</p>
             <h1 id="hero-title">I build useful things with technology.</h1>
             <p className="hero-lede">
-              I&apos;m Garret Ritchie, a technology strategist, systems builder,
-              entrepreneur, and educator working across AI, software, infrastructure,
-              business operations, and digital experience.
-            </p>
-            <p className="hero-lede">
-              I notice what others overlook, question what others accept, and turn
-              complex problems into practical systems people can understand, use, and
-              improve.
+              I&apos;m Garret Ritchie. I help businesses leverage technology in the
+              workplace, build AI-powered web apps, automate practical workflows,
+              and share what I learn along the way.
             </p>
             <div className="hero-actions" aria-label="Page actions">
               <Link className="primary-action" href="/work">
                 View workbench
                 <span aria-hidden="true">-&gt;</span>
               </Link>
-              <Link className="secondary-action" href="/about">Read the philosophy</Link>
+              <Link className="secondary-action" href="/about">About Garret</Link>
             </div>
-            <dl className="hero-metrics" aria-label="Current site metadata">
-              <div>
-                <dt>Builds listed</dt>
-                <dd>{projects.length}</dd>
-              </div>
-              <div>
-                <dt>Years leading</dt>
-                <dd>20+</dd>
-              </div>
-              <div>
-                <dt>Motif</dt>
-                <dd>Day 1 of 1</dd>
-              </div>
-            </dl>
           </div>
 
           <figure className="portrait-panel">
@@ -65,47 +46,7 @@ export default function Home() {
               height="941"
               fetchPriority="high"
             />
-            <figcaption>
-              <strong>Current focus</strong>
-              <span>AI tools, business experiments, useful systems, and learning by building.</span>
-            </figcaption>
           </figure>
-
-          <aside className="hero-rail" aria-label="Current focus and status">
-            <article className="rail-primary">
-              <span className="rail-label">01 / Current focus</span>
-              <h2>AI tools, business experiments, and learning by building.</h2>
-              <p>Learn from yesterday. Prepare for tomorrow. Live and build today.</p>
-              <Link href="/about">Explore the idea</Link>
-            </article>
-            <article>
-              <span className="rail-label">02 / Identity</span>
-              <ul>
-                <li>Observer</li>
-                <li>Questioner</li>
-                <li>Builder</li>
-                <li>Teacher</li>
-              </ul>
-              <Link href="/about">View profile</Link>
-            </article>
-            <article>
-              <span className="rail-label">03 / System status</span>
-              <dl className="status-meter">
-                <div>
-                  <dt>Curiosity</dt>
-                  <dd><span style={{ width: "100%" }} />100%</dd>
-                </div>
-                <div>
-                  <dt>Builder mode</dt>
-                  <dd><span style={{ width: "92%" }} />On</dd>
-                </div>
-                <div>
-                  <dt>Attention</dt>
-                  <dd><span style={{ width: "88%" }} />Present</dd>
-                </div>
-              </dl>
-            </article>
-          </aside>
         </div>
       </section>
 
