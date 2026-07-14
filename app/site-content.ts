@@ -50,12 +50,39 @@ export type PortfolioProject = {
 export type PortfolioSection = {
   title: string;
   introduction?: string;
+  featured?: boolean;
   projects: PortfolioProject[];
 };
 
 export const portfolioSections: PortfolioSection[] = [
   {
+    title: "Business Platforms and Digital Transformation",
+    introduction:
+      "The strongest portfolio examples: practical business systems that combine technology strategy, operations, web presence, training, reporting, and workflow design.",
+    featured: true,
+    projects: [
+      {
+        name: "Redstone Managed IT Services Platform and Digital Transformation Programme",
+        summary:
+          "A comprehensive digital transformation initiative for Redstone Technology Solutions.",
+        detail:
+          "The programme combines a custom managed-services platform with improvements across service delivery, client management, operations, reporting, pricing, technical documentation, infrastructure, security, and digital presence.",
+        keyAreas: ["MSP software", "Service operations", "Business intelligence", "Client management", "Cybersecurity", "Digital transformation"],
+      },
+      {
+        name: "Synergy Bahamas Digital Training and Business Platform",
+        summary:
+          "A consolidated digital platform supporting Synergy Bahamas across training delivery, student administration, corporate sales, marketing, reporting, and business operations.",
+        detail:
+          "The project combines a public website, learning management system, course catalogue, student records, assessments, training materials, course schedules, analytics, executive workflows, and reporting.",
+        keyAreas: ["Education technology", "Learning management", "Student administration", "Curriculum development", "Corporate training", "Reporting"],
+      },
+    ],
+  },
+  {
     title: "Applications and Digital Platforms",
+    introduction:
+      "Product concepts and application builds focused on workflow clarity, decision support, customer experience, and practical AI use.",
     projects: [
       {
         name: "Zion AI Assistant Platform",
@@ -125,6 +152,8 @@ export const portfolioSections: PortfolioSection[] = [
   },
   {
     title: "Websites and Web Applications",
+    introduction:
+      "Public-facing websites and small web applications designed to improve presentation, lead capture, usability, and business communication.",
     projects: [
       {
         name: "ShutterUP Website and Quotation App",
@@ -151,46 +180,19 @@ export const portfolioSections: PortfolioSection[] = [
         keyAreas: ["Hospitality web design", "Menu presentation", "Local branding", "Social integration", "Mobile UX", "Customer engagement"],
       },
       {
-        name: "Bahamian Cafe Website Redesign",
+        name: "Bits and Bytes / Bahamian Cafe Website Redesign",
         summary:
-          "A website redesign concept for a local breakfast and lunch cafe.",
+          "An AI-assisted website, content, and digital-brand redesign for the Bits and Bytes business, including the Bahamian Cafe experience.",
         detail:
-          "The design emphasises convenience, parking, location, affordability, freshness, healthier choices, and the cafe's connection to the surrounding business community.",
-        keyAreas: ["Restaurant UX", "Visual storytelling", "Local positioning", "Social integration", "Responsive design", "Conversion content"],
-      },
-      {
-        name: "Bits and Bytes Website",
-        summary:
-          "An AI-assisted website and digital-brand project for the Bits and Bytes business.",
-        detail:
-          "The project combined content development, visual direction, page structure, responsive design, and brand presentation to create a clearer online presence.",
-        keyAreas: ["Website strategy", "Content development", "Visual identity", "Responsive design", "Digital branding"],
-      },
-    ],
-  },
-  {
-    title: "Business Platforms and Digital Transformation",
-    projects: [
-      {
-        name: "Redstone Managed IT Services Platform and Digital Transformation Programme",
-        summary:
-          "A comprehensive digital transformation initiative for Redstone Technology Solutions.",
-        detail:
-          "The programme combines a custom managed-services platform with improvements across service delivery, client management, operations, reporting, pricing, technical documentation, infrastructure, security, and digital presence.",
-        keyAreas: ["MSP software", "Service operations", "Business intelligence", "Client management", "Cybersecurity", "Digital transformation"],
-      },
-      {
-        name: "Synergy Bahamas Digital Training and Business Platform",
-        summary:
-          "A consolidated digital platform supporting Synergy Bahamas across training delivery, student administration, corporate sales, marketing, reporting, and business operations.",
-        detail:
-          "The project combines a public website, learning management system, course catalogue, student records, assessments, training materials, course schedules, analytics, executive workflows, and reporting.",
-        keyAreas: ["Education technology", "Learning management", "Student administration", "Curriculum development", "Corporate training", "Reporting"],
+          "The project combined content development, visual direction, page structure, responsive design, menu and cafe positioning, local business messaging, and a clearer online presence.",
+        keyAreas: ["Website strategy", "Restaurant UX", "Content development", "Visual identity", "Local positioning", "Responsive design"],
       },
     ],
   },
   {
     title: "AI Development and Automation Systems",
+    introduction:
+      "Behind-the-scenes systems for building, testing, deploying, and improving AI-assisted web applications and business workflows.",
     projects: [
       {
         name: "Codex, Bolt, GitHub and Supabase Development Workflow",
