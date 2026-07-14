@@ -14,26 +14,26 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.garretritchie.com"),
-  title: "Garret Ritchie | Personal AI Project Portal",
+  title: "Garret Ritchie | Personal Lab and Project Workbench",
   description:
-    "A personal landing page and project directory for Garret Ritchie's AI-powered web apps, side-hustle experiments, and business ideas.",
+    "A personal lab, profile, and project workbench for Garret Ritchie's AI-powered web apps, practical automation, managed services work, and business experiments.",
   icons: {
     icon: "/gr-logo.png",
     shortcut: "/gr-logo.png",
   },
   openGraph: {
-    title: "Garret Ritchie | Personal AI Project Portal",
+    title: "Garret Ritchie | Personal Lab and Project Workbench",
     description:
-      "AI-powered web apps, business idea tests, and practical automation projects from Garret Ritchie.",
+      "AI-powered web apps, practical automation, project case studies, and business experiments from Garret Ritchie.",
     url: "https://www.garretritchie.com",
     siteName: "Garret Ritchie",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Garret Ritchie | Personal AI Project Portal",
+    title: "Garret Ritchie | Personal Lab and Project Workbench",
     description:
-      "A home base for AI-powered web apps, side-hustle experiments, and useful tools.",
+      "A personal lab for AI-powered apps, side-hustle experiments, useful tools, and field notes.",
   },
 };
 
