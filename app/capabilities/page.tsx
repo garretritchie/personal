@@ -29,7 +29,7 @@ export default function CapabilitiesPage() {
           {capabilityGroups.map((group) => (
             <details className="capability-card" key={group.domain} open>
               <summary>{group.domain}</summary>
-              {"summary" in group ? <p>{group.summary}</p> : null}
+              {"summary" in group ? <p>{group.summary as string}</p> : null}
               <div className="tag-list">
                 {group.items.map((item) => (
                   <span key={item}>{item}</span>
