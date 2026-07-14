@@ -28,12 +28,13 @@ test("server-renders the personal lab landing page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Garret Ritchie \| Personal Lab and Project Workbench/);
-  assert.match(html, /I&#x27;m Garret\. Building small useful things\./);
-  assert.match(html, /Dynamic project workbench/);
+  assert.match(html, /Garret Ritchie \| Technology Strategist, Systems Builder and Educator/);
+  assert.match(html, /I build useful things with technology\./);
+  assert.match(html, /Curiosity leads to building\./);
   assert.match(html, /Redstone MSP App/);
-  assert.match(html, /Project Zion 2\.0/);
   assert.match(html, /Experience teaches what theory cannot/);
-  assert.match(html, /Garret K\. Ritchie/);
+  assert.match(html, /href="\/work"/);
+  assert.match(html, /href="\/about"/);
+  assert.match(html, /href="\/contact"/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|react-loading-skeleton/);
 });

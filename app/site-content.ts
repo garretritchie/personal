@@ -33,14 +33,11 @@ export type Project = {
 };
 
 export const navItems = [
-  { href: "#profile", label: "Who I am" },
-  { href: "#projects", label: "Projects" },
-  { href: "#thinking", label: "Thinking" },
-  { href: "#experience", label: "Experience" },
-  { href: "#capabilities", label: "Capabilities" },
-  { href: "#learning", label: "Learning" },
-  { href: "#quote", label: "Quote" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const workbenchFilters: ProjectLifecycle[] = [
