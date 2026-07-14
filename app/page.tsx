@@ -146,8 +146,8 @@ export default function Home() {
             <h1 id="hero-title">Building small useful things, one hard lesson at a time.</h1>
             <p className="hero-lede">
               I am collecting my AI-powered web apps, business idea tests, and practical
-              automation projects here so family, friends, and collaborators can see what
-              I am working on.
+              automation projects here so colleagues, friends, and collaborators can see
+              what I am working on.
             </p>
             <div className="hero-actions" aria-label="Page actions">
               <a className="primary-action" href="#projects">View the project directory</a>
