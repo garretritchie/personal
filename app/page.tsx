@@ -29,6 +29,49 @@ const projects = [
   },
 ];
 
+const profileHighlights = [
+  {
+    label: "20+ years",
+    title: "Information technology",
+    detail:
+      "Hands-on leadership across managed services, systems administration, networking, security, and user support.",
+  },
+  {
+    label: "Director",
+    title: "Technology leadership",
+    detail:
+      "Guiding technical operations, client solutions, project delivery, and team execution through Redstone Technology.",
+  },
+  {
+    label: "Instructor",
+    title: "Technical training",
+    detail:
+      "Long-running work as a lead technical trainer, certified instructor, and mentor for students and professionals.",
+  },
+];
+
+const expertise = [
+  "Managed IT services",
+  "Network services",
+  "Routing and switching",
+  "Virtualization",
+  "Cybersecurity",
+  "Web development",
+  "Technical instruction",
+  "Business management",
+];
+
+const credentials = [
+  "Microsoft Certified Trainer",
+  "CompTIA Certified Trainer",
+  "Certified Information Systems Security Officer",
+  "Certified Ethical Hacker",
+  "Certified Penetration Testing Engineer",
+  "Microsoft MCSE / MCSA",
+  "CompTIA A+ / Network+",
+  "Cisco CCENT",
+];
+
 const interests = [
   "AI-powered web apps",
   "Business experiments",
@@ -47,6 +90,7 @@ export default function Home() {
             <span>Garret Ritchie</span>
           </a>
           <nav aria-label="Primary navigation">
+            <a href="#profile">Profile</a>
             <a href="#projects">Projects</a>
             <a href="#quote">Quote</a>
             <a href="mailto:hello@garretritchie.com">Contact</a>
@@ -96,6 +140,54 @@ export default function Home() {
           experimenting, learning in public with a small trusted circle, and turning the
           best ideas into tools people can actually use.
         </p>
+      </section>
+
+      <section className="profile-section" id="profile" aria-labelledby="profile-title">
+        <div className="profile-intro">
+          <p className="section-kicker">Profile</p>
+          <h2 id="profile-title">IT engineer, technology leader, and teacher at heart.</h2>
+          <p>
+            My professional background sits at the intersection of practical IT,
+            business operations, and education. I like solving real problems, explaining
+            technical ideas clearly, and building systems that help people work better.
+          </p>
+        </div>
+
+        <div className="profile-highlights">
+          {profileHighlights.map((item) => (
+            <article className="profile-card" key={item.title}>
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="profile-details" aria-label="Professional details">
+          <div>
+            <h3>Core expertise</h3>
+            <div className="tag-list">
+              {expertise.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3>Selected credentials</h3>
+            <div className="tag-list">
+              {credentials.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <blockquote>
+          <p>
+            "This is the person that will deliver results, not excuses."
+          </p>
+          <cite>Professional reference from Garret's resume</cite>
+        </blockquote>
       </section>
 
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
