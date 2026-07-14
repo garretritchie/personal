@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export",
-};
+const isVinextBuild = process.env.npm_lifecycle_event === "build";
+
+const nextConfig: NextConfig = isVinextBuild
+  ? {}
+  : {
+      output: "export",
+    };
 
 export default nextConfig;
