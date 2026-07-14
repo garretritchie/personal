@@ -70,7 +70,7 @@ export function SiteHeader() {
   useEffect(() => {
     const revealItems = Array.from(
       document.querySelectorAll<HTMLElement>(
-        ".section-shell, .page-hero, .project-card, .profile-card, .capability-card, .field-note, .principle-card, .contact-card, .linkedin-panel, .case-study-panel",
+        ".section-shell, .page-hero, .project-card, .profile-card, .capability-card, .field-note, .principle-card, .contact-card, .case-study-panel",
       ),
     );
     revealItems.forEach((item) => item.classList.add("reveal"));
@@ -290,31 +290,6 @@ export function ContactCards() {
           </div>
         </article>
       ))}
-    </div>
-  );
-}
-
-export function LinkedinPanel() {
-  return (
-    <div className="linkedin-panel">
-      <h3>Professional networking</h3>
-      <p>Connect with me professionally and see more of my background.</p>
-      <div
-        className="badge-base LI-profile-badge"
-        data-locale="en_US"
-        data-size="medium"
-        data-theme="dark"
-        data-type="VERTICAL"
-        data-vanity="garretritchie"
-        data-version="v1"
-      >
-        <a
-          className="badge-base__link LI-simple-link"
-          href="https://bs.linkedin.com/in/garretritchie?trk=profile-badge"
-        >
-          View Garret Ritchie on LinkedIn
-        </a>
-      </div>
     </div>
   );
 }

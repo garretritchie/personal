@@ -19,6 +19,14 @@ export default function ContactPage() {
             View contact details
             <span aria-hidden="true">-&gt;</span>
           </a>
+          <a
+            className="secondary-action"
+            href="https://bs.linkedin.com/in/garretritchie"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn /garretritchie
+          </a>
         </div>
       </section>
       <SiteFooter />

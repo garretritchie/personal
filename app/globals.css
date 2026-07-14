@@ -1319,40 +1319,6 @@ blockquote cite {
   font-weight: 850;
 }
 
-.linkedin-panel {
-  border: 1px solid var(--line);
-  background: var(--deep);
-  color: var(--surface);
-  padding: 22px;
-}
-
-.linkedin-panel h3 {
-  margin: 0 0 8px;
-  font-size: 1.4rem;
-}
-
-.linkedin-panel p {
-  margin: 0 0 16px;
-  color: #e6ddcf;
-  line-height: 1.55;
-}
-
-.LI-profile-badge {
-  max-width: 100%;
-  min-height: 160px;
-}
-
-.LI-simple-link {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 250, 240, 0.7);
-  color: var(--surface);
-  padding: 0 14px;
-  font-weight: 900;
-}
-
 .system-footer {
   display: grid;
   grid-template-columns: minmax(0, 0.7fr) minmax(300px, 1fr);
@@ -1631,8 +1597,7 @@ blockquote cite {
   .project-card,
   .contact-card,
   .profile-card,
-  .field-note,
-  .linkedin-panel {
+  .field-note {
     padding: 16px;
   }
 }
