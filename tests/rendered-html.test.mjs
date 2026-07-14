@@ -34,6 +34,7 @@ test("server-renders the personal lab landing page", async () => {
   assert.match(html, /Experience teaches what theory cannot/);
   assert.doesNotMatch(html, /Redstone MSP App/);
   assert.doesNotMatch(html, /href="\/work"/);
+  assert.match(html, /href="\/portfolio"/);
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/contact"/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|react-loading-skeleton/);

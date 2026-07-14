@@ -34,9 +34,206 @@ export type Project = {
 
 export const navItems = [
   { href: "/", label: "Home" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/contact", label: "Contact" },
+];
+
+export type PortfolioProject = {
+  name: string;
+  summary: string;
+  detail?: string;
+  keyAreas: string[];
+};
+
+export type PortfolioSection = {
+  title: string;
+  introduction?: string;
+  projects: PortfolioProject[];
+};
+
+export const portfolioSections: PortfolioSection[] = [
+  {
+    title: "Applications and Digital Platforms",
+    projects: [
+      {
+        name: "Zion AI Assistant Platform",
+        summary:
+          "A personal and business AI assistant designed to bring together voice interaction, specialist agents, reminders, dashboards, private context management, and integrations with everyday business tools.",
+        detail:
+          "The platform is being developed as a central command interface for planning, communication, research, decision-making, task management, and business operations.",
+        keyAreas: ["AI agents", "Voice interaction", "Workflow automation", "Privacy controls", "Model routing", "Dashboards"],
+      },
+      {
+        name: "Momentum Youth Support and Development App",
+        summary:
+          "A mobile-first application designed to help teenagers build confidence, develop positive habits, track personal progress, and organise important areas of their lives.",
+        detail:
+          "Momentum combines goals, activities, journalling, achievements, emotional-wellness support, educational planning, document organisation, and appropriate parental visibility.",
+        keyAreas: ["Youth development", "Mobile UX", "Progress tracking", "Journalling", "Wellness support", "Family collaboration"],
+      },
+      {
+        name: "AI DayTrader Platform",
+        summary:
+          "An AI-assisted paper-trading platform built to test automated day-trading strategies in a controlled environment.",
+        detail:
+          "The system combines market scanning, strategy testing, catalyst analysis, guarded execution, exit monitoring, risk controls, trade journalling, and performance reporting.",
+        keyAreas: ["Algorithmic trading", "AI decision support", "Strategy testing", "Market analysis", "Risk management", "Reporting"],
+      },
+      {
+        name: "NYCHIA Platform",
+        summary:
+          "A unified marketplace and digital business platform built around premium access, memberships, recurring services, vendor participation, and customer experience.",
+        detail:
+          "The platform brings together the public website, member journeys, vendor management, customer administration, recurring service delivery, reporting, and internal business operations.",
+        keyAreas: ["Marketplace design", "Memberships", "Vendor management", "Customer experience", "Recurring services", "Operations"],
+      },
+      {
+        name: "OwaSo Fresh Supply Platform",
+        summary:
+          "A digital agricultural marketplace designed to connect Bahamian farmers and produce suppliers with business buyers.",
+        detail:
+          "The platform supports procurement, product availability, ordering, fulfilment, delivery coordination, invoicing, and reporting.",
+        keyAreas: ["Agricultural technology", "Digital marketplaces", "Supply-chain workflows", "Ordering", "Fulfilment", "Invoicing"],
+      },
+      {
+        name: "ChangePilot Construction Management App",
+        summary:
+          "A construction workflow application designed to simplify the documentation and approval of field changes.",
+        detail:
+          "ChangePilot supports change orders, field notes, approvals, handovers, checklists, pricing, supporting photographs, and client-ready reports.",
+        keyAreas: ["Construction technology", "Field documentation", "Approvals", "Change orders", "Reporting", "Mobile workflows"],
+      },
+      {
+        name: "Business Renewal and Compliance Tracker",
+        summary:
+          "A business application concept designed to monitor recurring obligations such as licences, contracts, insurance, subscriptions, certifications, and compliance deadlines.",
+        detail:
+          "The system is intended to reduce missed renewals by centralising due dates, supporting documents, responsibilities, alerts, and status tracking.",
+        keyAreas: ["Compliance management", "Renewal tracking", "Document organisation", "Reminders", "Accountability", "Risk reduction"],
+      },
+      {
+        name: "Digital Legacy and Storytelling Platform",
+        summary:
+          "A digital platform concept for preserving family stories, personal histories, photographs, recordings, milestones, and important memories.",
+        detail:
+          "The goal is to provide a structured way for individuals and families to document their experiences and pass them on to future generations.",
+        keyAreas: ["Digital storytelling", "Family history", "Media preservation", "Structured content", "Legacy planning", "User experience"],
+      },
+    ],
+  },
+  {
+    title: "Websites and Web Applications",
+    projects: [
+      {
+        name: "ShutterUP Website and Quotation App",
+        summary:
+          "A customer-facing website and quotation application for ShutterUP Glass & Aluminum.",
+        detail:
+          "The experience presents products and services clearly while helping customers submit detailed quotation requests with product preferences, measurements, installation details, and project requirements.",
+        keyAreas: ["Web design", "Lead generation", "Quotation workflows", "Customer experience", "Responsive UX", "Business automation"],
+      },
+      {
+        name: "Professional Engineers Board Website",
+        summary:
+          "A redesigned public website for a professional and regulatory organisation.",
+        detail:
+          "The project focused on improving information architecture, navigation, content clarity, accessibility, visual presentation, and overall usability.",
+        keyAreas: ["Website redesign", "Information architecture", "Accessibility", "Content strategy", "Responsive design", "Public-service UX"],
+      },
+      {
+        name: "Max Conch Bar Website",
+        summary:
+          "A website and digital-marketing experience for a Bahamian food business.",
+        detail:
+          "The site showcases the menu, location, brand personality, customer experience, and social-media content while presenting the business in a more engaging way.",
+        keyAreas: ["Hospitality web design", "Menu presentation", "Local branding", "Social integration", "Mobile UX", "Customer engagement"],
+      },
+      {
+        name: "Bahamian Cafe Website Redesign",
+        summary:
+          "A website redesign concept for a local breakfast and lunch cafe.",
+        detail:
+          "The design emphasises convenience, parking, location, affordability, freshness, healthier choices, and the cafe's connection to the surrounding business community.",
+        keyAreas: ["Restaurant UX", "Visual storytelling", "Local positioning", "Social integration", "Responsive design", "Conversion content"],
+      },
+      {
+        name: "Bits and Bytes Website",
+        summary:
+          "An AI-assisted website and digital-brand project for the Bits and Bytes business.",
+        detail:
+          "The project combined content development, visual direction, page structure, responsive design, and brand presentation to create a clearer online presence.",
+        keyAreas: ["Website strategy", "Content development", "Visual identity", "Responsive design", "Digital branding"],
+      },
+    ],
+  },
+  {
+    title: "Business Platforms and Digital Transformation",
+    projects: [
+      {
+        name: "Redstone Managed IT Services Platform and Digital Transformation Programme",
+        summary:
+          "A comprehensive digital transformation initiative for Redstone Technology Solutions.",
+        detail:
+          "The programme combines a custom managed-services platform with improvements across service delivery, client management, operations, reporting, pricing, technical documentation, infrastructure, security, and digital presence.",
+        keyAreas: ["MSP software", "Service operations", "Business intelligence", "Client management", "Cybersecurity", "Digital transformation"],
+      },
+      {
+        name: "Synergy Bahamas Digital Training and Business Platform",
+        summary:
+          "A consolidated digital platform supporting Synergy Bahamas across training delivery, student administration, corporate sales, marketing, reporting, and business operations.",
+        detail:
+          "The project combines a public website, learning management system, course catalogue, student records, assessments, training materials, course schedules, analytics, executive workflows, and reporting.",
+        keyAreas: ["Education technology", "Learning management", "Student administration", "Curriculum development", "Corporate training", "Reporting"],
+      },
+    ],
+  },
+  {
+    title: "AI Development and Automation Systems",
+    projects: [
+      {
+        name: "Codex, Bolt, GitHub and Supabase Development Workflow",
+        summary:
+          "A coordinated AI-assisted development workflow using multiple tools across the software lifecycle.",
+        detail:
+          "Codex supports code development, refactoring, testing, and review. Bolt supports rapid application development and publishing. GitHub provides source control, while Supabase supports databases, authentication, content management, and application data.",
+        keyAreas: ["AI-assisted development", "Version control", "Database architecture", "Application deployment", "Tool orchestration", "Software delivery"],
+      },
+      {
+        name: "AI Prompt Engineering and Software Quality System",
+        summary:
+          "A reusable framework for directing AI development tools through complex technical and design tasks.",
+        detail:
+          "The system includes structured prompts for codebase audits, visual inspections, UI/UX refinement, mobile responsiveness, CMS testing, database migrations, bug detection, regression testing, refactoring, and production-readiness reviews.",
+        keyAreas: ["Prompt engineering", "Quality assurance", "Code review", "UX review", "Testing", "Development governance"],
+      },
+      {
+        name: "Website Deployment and Domain Automation Workflow",
+        summary:
+          "A repeatable production workflow for moving AI-assisted web projects from development into live deployment.",
+        detail:
+          "The process connects source-code management, deployment platforms, environment variables, DNS configuration, custom domains, build validation, and post-deployment testing.",
+        keyAreas: ["GitHub", "Netlify", "Deployment automation", "DNS", "Custom domains", "Production validation"],
+      },
+      {
+        name: "AI-Generated Visual Asset System",
+        summary:
+          "A creative workflow for producing custom visual assets for websites, applications, campaigns, and digital brands.",
+        detail:
+          "The system has been used to create hero graphics, abstract portraits, branded backgrounds, transparent interface elements, quote imagery, promotional visuals, and other digital assets.",
+        keyAreas: ["Generative design", "Website imagery", "Visual identity", "Campaign creative", "Interface graphics", "Brand consistency"],
+      },
+      {
+        name: "Business Document and Data Automation System",
+        summary:
+          "A structured workflow for extracting, cleaning, validating, classifying, and organising business information.",
+        detail:
+          "The system supports converting statements into spreadsheets, categorising contact databases, standardising course schedules, preparing catalogue data, and transforming unstructured documents into usable records.",
+        keyAreas: ["Document processing", "Data extraction", "Classification", "Spreadsheet automation", "Data quality", "Business administration"],
+      },
+    ],
+  },
 ];
 
 export const workbenchFilters: ProjectLifecycle[] = [

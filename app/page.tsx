@@ -31,6 +31,7 @@ export default function Home() {
                 Start a conversation
                 <span aria-hidden="true">-&gt;</span>
               </Link>
+              <Link className="secondary-action" href="/portfolio">View portfolio</Link>
               <Link className="secondary-action" href="/about">About Garret</Link>
             </div>
           </div>
@@ -72,6 +73,7 @@ export default function Home() {
           </div>
           <div className="hero-actions">
             <Link className="secondary-action" href="/about">About Garret</Link>
+            <Link className="secondary-action" href="/portfolio">Portfolio</Link>
             <Link className="secondary-action" href="/capabilities">Capabilities</Link>
           </div>
         </div>
