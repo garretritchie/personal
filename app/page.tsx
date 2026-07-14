@@ -136,7 +136,7 @@ export default function Home() {
             <a href="#profile">Profile</a>
             <a href="#projects">Projects</a>
             <a href="#quote">Quote</a>
-            <a href="mailto:hello@garretritchie.com">Contact</a>
+            <a href="#contact">Contact</a>
           </nav>
         </header>
 
@@ -151,9 +151,7 @@ export default function Home() {
             </p>
             <div className="hero-actions" aria-label="Page actions">
               <a className="primary-action" href="#projects">View the project directory</a>
-              <a className="secondary-action" href="mailto:hello@garretritchie.com">
-                Send an idea
-              </a>
+              <a className="secondary-action" href="#contact">Get in touch</a>
             </div>
           </div>
 
@@ -289,6 +287,37 @@ export default function Home() {
           </p>
         </div>
         <img src="/twain-quote.png" alt="Mark Twain quote about learning by experience" />
+      </section>
+
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-heading">
+          <p className="section-kicker">Contact</p>
+          <h2 id="contact-title">Garret K. Ritchie</h2>
+          <p>
+            Reach me for Redstone Technology Solutions, collaboration, project feedback,
+            or personal follow-up.
+          </p>
+        </div>
+
+        <div className="contact-grid">
+          <article className="contact-card">
+            <span>Business</span>
+            <h3>Redstone Technology Solutions</h3>
+            <p>Nassau, Bahamas</p>
+            <a href="tel:+12426016014">242-601-6014</a>
+            <a href="mailto:gritchie@redstoneTS.com">gritchie@redstoneTS.com</a>
+          </article>
+
+          <article className="contact-card">
+            <span>Personal</span>
+            <h3>Nassau, Bahamas</h3>
+            <a href="tel:+12425357735">242-535-7735</a>
+            <h3>Ontario, Canada</h3>
+            <a href="tel:+12269733425">226-973-3425</a>
+            <a href="mailto:garretritchie@gmail.com">garretritchie@gmail.com</a>
+            <a href="mailto:hello@garretritchie.com">hello@garretritchie.com</a>
+          </article>
+        </div>
       </section>
 
       <footer>
