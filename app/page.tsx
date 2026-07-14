@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 const projects = [
   {
     name: "AI Idea Lab",
@@ -83,6 +85,12 @@ const interests = [
 export default function Home() {
   return (
     <main>
+      <Script
+        src="https://platform.linkedin.com/badges/js/profile.js"
+        strategy="lazyOnload"
+        type="text/javascript"
+      />
+
       <section className="hero" aria-labelledby="hero-title">
         <header className="site-header">
           <a className="brand" href="#top" aria-label="Garret Ritchie home">
@@ -178,6 +186,26 @@ export default function Home() {
               {credentials.map((item) => (
                 <span key={item}>{item}</span>
               ))}
+            </div>
+          </div>
+          <div className="linkedin-panel">
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally and see more of my background.</p>
+            <div
+              className="badge-base LI-profile-badge"
+              data-locale="en_US"
+              data-size="medium"
+              data-theme="dark"
+              data-type="VERTICAL"
+              data-vanity="garretritchie"
+              data-version="v1"
+            >
+              <a
+                className="badge-base__link LI-simple-link"
+                href="https://bs.linkedin.com/in/garretritchie?trk=profile-badge"
+              >
+                View Garret Ritchie on LinkedIn
+              </a>
             </div>
           </div>
         </div>
