@@ -6,10 +6,10 @@ export default function WorkPage() {
       <SiteHeader />
       <section className="page-hero" aria-labelledby="work-title">
         <p className="section-kicker">Work</p>
-        <h1 id="work-title">Project workbench</h1>
+        <h1 id="work-title">Project portfolio</h1>
         <p>
-          A cleaner place for the full project directory: status, capability tags,
-          problem statements, role, outcome notes, and case-study structure.
+          A curated look at the platforms, websites, experiments, and business
+          systems I am building or improving.
         </p>
       </section>
       <section className="section-shell workbench-section" aria-labelledby="projects-title">
@@ -19,8 +19,8 @@ export default function WorkPage() {
             <h2 id="projects-title">Current systems, products, and experiments</h2>
           </div>
           <p>
-            Filter by lifecycle, select a build, and inspect the case-study structure
-            behind each project without overcrowding the home page.
+            Browse by lifecycle, choose a project, and see the practical problem,
+            role, decisions, and current status behind the work.
           </p>
         </div>
         <ProjectWorkbench />

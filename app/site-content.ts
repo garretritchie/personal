@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "Redstone needs a cleaner operational layer for service visibility, client activity, subscriptions, vendors, and internal execution.",
     role: "Product owner, systems architect, workflow designer, and implementation lead.",
     outcome:
-      "A purpose-built operations workspace for standardizing daily MSP work. [Add measurable result]",
+      "A purpose-built operations workspace for standardizing daily MSP work and making service activity easier to manage.",
     caseStudy: {
       context:
         "Redstone Technology Solutions supports business clients that need dependable IT operations and fast follow-through.",
@@ -78,9 +78,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Keep service work close to client context, expose high-signal status first, and defer nice-to-have analytics until the workflow is reliable.",
       architecture:
-        "Web app with client, service, subscription, vendor, and operations views. [Confirm technology stack]",
+        "Web application with client, service, subscription, vendor, and operations views shaped around day-to-day managed service workflows.",
       outcome:
-        "A more focused platform for running and improving managed service operations. [Add measurable result]",
+        "A more focused platform for running and improving managed service operations.",
       lessons:
         "Operational software only works when it respects the way technicians actually move through a day.",
       currentStatus: "Operating and evolving with Redstone workflows.",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
       "Trading ideas need disciplined testing and risk review before they become anything close to real-world action.",
     role: "Experiment designer and builder.",
     outcome:
-      "A research environment for strategy testing, paper workflows, and clearer decision rules. [Add measurable result]",
+      "A research environment for strategy testing, paper workflows, and clearer decision rules.",
     caseStudy: {
       context:
         "The project explores whether AI-assisted tooling can help make trading research more structured and less emotional.",
@@ -114,9 +114,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Prioritize paper-trading, explainability, and risk checks over live execution.",
       architecture:
-        "Research web app with strategy notes, scenario checks, and evaluation views. [Confirm technology stack]",
+        "Research web app with strategy notes, scenario checks, and evaluation views.",
       outcome:
-        "A safer place to reason about trading ideas before committing real capital. [Add measurable result]",
+        "A safer place to reason about trading ideas before committing real capital.",
       lessons:
         "The most useful automation often slows you down at the right moment.",
       currentStatus: "Testing and research.",
@@ -135,7 +135,7 @@ export const projects: Project[] = [
       "A promising service idea needs sharper positioning, realistic economics, and a launch path before it becomes a business.",
     role: "Founder, planner, and product strategist.",
     outcome:
-      "A planning workspace that turns scattered thinking into a clearer venture model. [Add measurable result]",
+      "A planning workspace that turns scattered thinking into a clearer venture model.",
     caseStudy: {
       context:
         "Nychia is a business concept being shaped through strategy, market thinking, and operating assumptions.",
@@ -150,9 +150,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Treat the venture as a set of experiments rather than a finished brand.",
       architecture:
-        "Planning and research workspace with structured notes and financial assumptions. [Confirm technology stack]",
+        "Planning and research workspace with structured notes, market questions, and financial assumptions.",
       outcome:
-        "A more disciplined concept with clearer questions to validate. [Add measurable result]",
+        "A more disciplined concept with clearer questions to validate.",
       lessons:
         "A business plan is most useful when it shows what still needs to be proven.",
       currentStatus: "Concept validation.",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       "The Professional Engineers Board of The Bahamas needs a maintainable public web presence with administrative publishing workflows.",
     role: "Web platform builder and implementation partner.",
     outcome:
-      "A public site and CMS foundation for board information, updates, forms, and ongoing content. [Add measurable result]",
+      "A public site and CMS foundation for board information, updates, forms, and ongoing content.",
     caseStudy: {
       context:
         "Professional associations need trustworthy public information and a manageable publishing process.",
@@ -186,9 +186,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Use a CMS model so routine updates do not require rebuilding the site manually.",
       architecture:
-        "Public website with content management for pages, news, forms, and board information. [Confirm technology stack]",
+        "Public website with content management for pages, news, forms, and board information.",
       outcome:
-        "A stronger public-facing platform for professional board communication. [Add measurable result]",
+        "A stronger public-facing platform for professional board communication.",
       lessons:
         "Administrative usability matters as much as front-end polish for institutional sites.",
       currentStatus: "Live CMS site.",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
       "Personal knowledge, sensitive documents, project memory, and AI-assisted workflows need clearer structure and boundaries.",
     role: "System designer and builder.",
     outcome:
-      "A second-generation personal operating system for organizing decisions, documents, and project context. [Add measurable result]",
+      "A second-generation personal operating system for organizing decisions, documents, and project context.",
     caseStudy: {
       context:
         "Project Zion 2.0 continues Garret's work on a private operating system for personal and professional knowledge.",
@@ -222,9 +222,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Make boundaries explicit before adding automation.",
       architecture:
-        "Personal knowledge system with documents, relationship context, project memory, and AI workflows. [Confirm technology stack]",
+        "Personal knowledge system with documents, relationship context, project memory, and AI workflows.",
       outcome:
-        "A clearer foundation for remembering, deciding, and building across projects. [Add measurable result]",
+        "A clearer foundation for remembering, deciding, and building across projects.",
       lessons:
         "AI is more useful when the human-designed information structure is already sane.",
       currentStatus: "MVP build.",
@@ -243,7 +243,7 @@ export const projects: Project[] = [
       "Bits & Bytes Cafe needs a maintainable public site for menu content, imagery, updates, and a brand presence that can keep growing.",
     role: "Website builder and CMS implementer.",
     outcome:
-      "A content-managed site that can grow beyond a static brochure. [Add measurable result]",
+      "A content-managed site that can grow beyond a static brochure.",
     caseStudy: {
       context:
         "Food and hospitality websites need to be visually useful, current, and simple to maintain.",
@@ -258,9 +258,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Treat menu and update content as managed content rather than hard-coded page text.",
       architecture:
-        "CMS-backed website for public pages, menus, media, and updates. [Confirm technology stack]",
+        "CMS-backed website for public pages, menus, media, and updates.",
       outcome:
-        "A practical, maintainable cafe web presence. [Add measurable result]",
+        "A practical, maintainable cafe web presence.",
       lessons:
         "Small business sites succeed when owners can keep them fresh without friction.",
       currentStatus: "Live CMS site.",
@@ -279,7 +279,7 @@ export const projects: Project[] = [
       "Synergy Bahamas needs a future-facing platform that combines public content, course delivery, and learning operations.",
     role: "Platform strategist and builder.",
     outcome:
-      "A combined LMS and CMS foundation for training programs, student engagement, and education operations. [Add measurable result]",
+      "A combined LMS and CMS foundation for training programs, student engagement, and education operations.",
     caseStudy: {
       context:
         "Education platforms have to serve public discovery, enrolled learners, administrators, and instructors.",
@@ -294,9 +294,9 @@ export const projects: Project[] = [
       keyDecisions:
         "Design the CMS and LMS as related capabilities rather than separate islands.",
       architecture:
-        "Education website with content management and learning-management capabilities. [Confirm technology stack]",
+        "Education website with content management and learning-management capabilities.",
       outcome:
-        "A stronger digital platform for courses, training, and long-term education operations. [Add measurable result]",
+        "A stronger digital platform for courses, training, and long-term education operations.",
       lessons:
         "Learning platforms need operational clarity before they need feature volume.",
       currentStatus: "Building.",

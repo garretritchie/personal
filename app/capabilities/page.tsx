@@ -9,8 +9,8 @@ export default function CapabilitiesPage() {
         <p className="section-kicker">Capabilities</p>
         <h1 id="capabilities-title">Practical systems across technology, business, AI, and experience.</h1>
         <p>
-          A more scannable version of the resume: coherent domains, credentials, and
-          applied strengths grouped by how they show up in real projects.
+          The practical strengths I bring to business technology, operations,
+          automation, education, and digital product work.
         </p>
       </section>
 

@@ -202,7 +202,7 @@ export function ProjectSummaryCard({ project, index = 0 }: { project: Project; i
     <Link
       className="project-card"
       href="/work"
-      aria-label={`View ${project.name} in the project workbench`}
+      aria-label={`View ${project.name} in the project portfolio`}
     >
       <div className="project-visual" aria-hidden="true">
         <span>{String(index + 1).padStart(2, "0")}</span>
@@ -226,7 +226,7 @@ export function ProjectSummaryCard({ project, index = 0 }: { project: Project; i
         </div>
       </div>
       <span className="project-role">{project.role}</span>
-      <span className="project-link-cue" aria-hidden="true">Open workbench -&gt;</span>
+      <span className="project-link-cue" aria-hidden="true">Open project -&gt;</span>
     </Link>
   );
 }
@@ -307,7 +307,7 @@ export function ProjectWorkbench() {
               </div>
               <span className="project-role">{project.role}</span>
               <span className="project-link-cue" aria-hidden="true">
-                {selectedProject.slug === project.slug ? "Selected" : "Review case"}
+                {selectedProject.slug === project.slug ? "Selected" : "View details"}
               </span>
             </button>
           ))}

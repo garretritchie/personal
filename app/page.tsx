@@ -31,7 +31,7 @@ export default function Home() {
             </p>
             <div className="hero-actions" aria-label="Page actions">
               <Link className="primary-action" href="/work">
-                View workbench
+                View projects
                 <span aria-hidden="true">-&gt;</span>
               </Link>
               <Link className="secondary-action" href="/about">About Garret</Link>
@@ -94,7 +94,7 @@ export default function Home() {
         </div>
         <div className="section-action-row">
           <Link className="primary-action" href="/work">
-            Open full workbench
+            Open project portfolio
             <span aria-hidden="true">-&gt;</span>
           </Link>
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
 
       <section className="section-shell quote-section" aria-labelledby="home-quote-title">
         <div className="quote-copy">
-          <p className="section-kicker">04 / Field notes</p>
+          <p className="section-kicker">04 / Experience</p>
           <h2 id="home-quote-title">Experience teaches what theory cannot.</h2>
           <p>
             Build the thing, test it in the real world, notice the friction, then make

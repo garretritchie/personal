@@ -11,8 +11,8 @@ export default function ContactPage() {
         <p className="section-kicker">Contact</p>
         <h1 id="contact-title">Garret K. Ritchie</h1>
         <p>
-          Contact details now live in the footer so they are available from every
-          page without a separate directory view.
+          Reach me for Redstone Technology Solutions, collaboration, project feedback,
+          professional networking, technical instruction, or practical automation ideas.
         </p>
         <div className="hero-actions">
           <a className="primary-action" href="#footer-contact">
