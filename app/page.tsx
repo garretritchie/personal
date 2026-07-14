@@ -163,7 +163,7 @@ export default function Home() {
           </div>
 
           <figure className="portrait-panel">
-            <img src="/garret-hero.png" alt="Illustrated portrait of Garret Ritchie" />
+            <img src="/garret-cutout-trim.png" alt="Illustrated portrait of Garret Ritchie" />
             <figcaption>
               <strong>Current focus</strong>
               <span>AI tools, business experiments, and learning by building.</span>

@@ -51,8 +51,11 @@ main {
 .hero {
   min-height: 92vh;
   padding: 22px clamp(18px, 4vw, 64px) 0;
-  background: #fbfaf6;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(193, 148, 85, 0.18), transparent 30%),
+    linear-gradient(135deg, #fbfaf6 0%, #f2eadc 100%);
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
 }
 
 .site-header {
@@ -95,6 +98,7 @@ footer a:hover {
 }
 
 .hero-grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(360px, 0.86fr) minmax(420px, 1fr);
   align-items: stretch;
@@ -103,9 +107,12 @@ footer a:hover {
   min-height: calc(92vh - 94px);
   margin: 0 auto;
   border-top: 1px solid rgba(23, 24, 23, 0.08);
+  overflow: visible;
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 4;
   display: flex;
   max-width: none;
   flex-direction: column;
@@ -218,25 +225,58 @@ h1 {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.portrait-panel::before {
+  position: absolute;
+  inset: 0 -64px 0 0;
+  z-index: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255, 250, 240, 0.95), transparent 28%),
+    linear-gradient(125deg, rgba(101, 114, 95, 0.26) 0 24%, transparent 24% 100%),
+    linear-gradient(112deg, transparent 0 34%, rgba(255, 250, 240, 0.78) 34% 58%, transparent 58% 100%),
+    linear-gradient(90deg, rgba(45, 79, 103, 0.3), rgba(45, 79, 103, 0.08));
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.portrait-panel::after {
+  position: absolute;
+  right: -56px;
+  bottom: 6%;
+  z-index: 1;
+  width: min(70%, 520px);
+  aspect-ratio: 1;
+  content: "";
+  background: rgba(20, 184, 166, 0.12);
+  border-radius: 999px;
+  filter: blur(4px);
 }
 
 .portrait-panel > img {
-  width: 100%;
-  height: 100%;
-  min-height: 620px;
+  position: absolute;
+  right: -42%;
+  bottom: -18%;
+  z-index: 2;
+  width: min(168%, 1120px);
+  max-width: none;
+  height: auto;
+  min-height: 0;
   aspect-ratio: auto;
-  object-fit: cover;
-  object-position: 64% center;
+  object-fit: contain;
+  object-position: center bottom;
   border: 0;
   clip-path: none;
-  box-shadow: none;
+  filter: drop-shadow(-26px 22px 28px rgba(23, 24, 23, 0.28));
 }
 
 .portrait-panel figcaption {
   position: absolute;
-  left: 26px;
+  left: 12px;
   bottom: 26px;
+  z-index: 3;
   width: min(290px, 82%);
   background: rgba(255, 250, 240, 0.94);
   border: 1px solid var(--line);
@@ -628,10 +668,11 @@ footer {
   }
 
   .portrait-panel > img {
-    height: auto;
-    min-height: auto;
-    aspect-ratio: 16 / 11;
-    object-position: 64% center;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 136%;
+    margin: -8% 0 0 -18%;
   }
 }
 
@@ -658,9 +699,8 @@ footer {
   }
 
   .portrait-panel > img {
-    aspect-ratio: 4 / 5;
-    object-position: 64% center;
-    box-shadow: none;
+    width: 156%;
+    margin-left: -26%;
   }
 
   .project-grid {
