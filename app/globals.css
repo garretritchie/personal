@@ -3411,3 +3411,384 @@ body {
     max-width: 18ch;
   }
 }
+
+/* Theme switcher */
+.site-nav {
+  isolation: isolate;
+  z-index: 120;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+}
+
+.desktop-theme-control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-theme-control {
+  display: none;
+  padding: 12px;
+}
+
+.theme-switcher {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  min-height: 40px;
+  border: 1px solid rgba(23, 24, 23, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.72);
+  padding: 3px;
+}
+
+.theme-switcher button {
+  min-width: 68px;
+  min-height: 32px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 0 10px;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+}
+
+.theme-switcher button[aria-pressed="true"] {
+  background: var(--deep);
+  color: var(--surface);
+  box-shadow: 0 8px 18px rgba(23, 24, 23, 0.12);
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .desktop-theme-control {
+    display: none;
+  }
+
+  .mobile-theme-control {
+    display: block;
+  }
+
+  .mobile-theme-control .theme-switcher {
+    width: 100%;
+  }
+}
+
+/* Alternate Studio theme */
+:root[data-theme="studio"] {
+  --ink: #edf7ff;
+  --paper: #08111f;
+  --surface: #0f1b2d;
+  --surface-strong: #17263e;
+  --muted: #9fb1c7;
+  --line: rgba(164, 193, 255, 0.2);
+  --copper: #7dd3fc;
+  --rust: #f472b6;
+  --sage: #a7f3d0;
+  --deep: #f8fbff;
+  --blue: #c4b5fd;
+  --cyan: #22d3ee;
+  --gold: #facc15;
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 0 0 1px rgba(125, 211, 252, 0.16), 0 20px 70px rgba(34, 211, 238, 0.12);
+}
+
+:root[data-theme="studio"] body {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(125, 211, 252, 0.2), transparent 26%),
+    radial-gradient(circle at 84% 4%, rgba(244, 114, 182, 0.18), transparent 28%),
+    radial-gradient(circle at 72% 74%, rgba(167, 243, 208, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+    #08111f;
+  background-size: auto, auto, auto, 34px 34px, 34px 34px, auto;
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+:root[data-theme="studio"] .site-nav {
+  border-bottom-color: rgba(164, 193, 255, 0.16);
+  background: rgba(8, 17, 31, 0.78);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="studio"] .brand {
+  color: #f8fbff;
+}
+
+:root[data-theme="studio"] .brand img {
+  border-color: rgba(125, 211, 252, 0.36);
+  background: #f8fbff;
+  box-shadow: 0 0 24px rgba(125, 211, 252, 0.22);
+}
+
+:root[data-theme="studio"] .desktop-nav a,
+:root[data-theme="studio"] .nav-cta {
+  color: rgba(237, 247, 255, 0.72);
+}
+
+:root[data-theme="studio"] .desktop-nav a::after {
+  background: linear-gradient(90deg, var(--cyan), var(--rust));
+}
+
+:root[data-theme="studio"] .desktop-nav a:hover,
+:root[data-theme="studio"] .desktop-nav a:focus-visible,
+:root[data-theme="studio"] .desktop-nav a[aria-current="page"] {
+  border-color: rgba(125, 211, 252, 0.34);
+  background: rgba(125, 211, 252, 0.1);
+  color: #f8fbff;
+}
+
+:root[data-theme="studio"] .nav-cta,
+:root[data-theme="studio"] .primary-action {
+  border-color: rgba(125, 211, 252, 0.32);
+  background: linear-gradient(135deg, #7dd3fc, #c4b5fd 48%, #f472b6);
+  color: #07111f;
+  box-shadow: 0 18px 44px rgba(125, 211, 252, 0.22);
+}
+
+:root[data-theme="studio"] .secondary-action {
+  border-color: rgba(237, 247, 255, 0.32);
+  background: rgba(15, 27, 45, 0.68);
+  color: #f8fbff;
+}
+
+:root[data-theme="studio"] .secondary-action:hover,
+:root[data-theme="studio"] .secondary-action:focus-visible {
+  border-color: var(--cyan);
+  background: rgba(125, 211, 252, 0.14);
+}
+
+:root[data-theme="studio"] .theme-switcher {
+  border-color: rgba(125, 211, 252, 0.26);
+  background: rgba(15, 27, 45, 0.78);
+}
+
+:root[data-theme="studio"] .theme-switcher button {
+  color: rgba(237, 247, 255, 0.68);
+}
+
+:root[data-theme="studio"] .theme-switcher button[aria-pressed="true"] {
+  background: #f8fbff;
+  color: #08111f;
+  box-shadow: 0 10px 30px rgba(125, 211, 252, 0.22);
+}
+
+:root[data-theme="studio"] .hero {
+  border-bottom-color: rgba(164, 193, 255, 0.18);
+  background:
+    radial-gradient(circle at 78% 16%, rgba(125, 211, 252, 0.32), transparent 30%),
+    radial-gradient(circle at 18% 24%, rgba(244, 114, 182, 0.2), transparent 28%),
+    linear-gradient(135deg, #08111f 0%, #101b31 52%, #17213a 100%);
+}
+
+:root[data-theme="studio"] .hero::before {
+  background:
+    linear-gradient(115deg, transparent 0 54%, rgba(125, 211, 252, 0.12) 54% 100%),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(125, 211, 252, 0.06) 1px, transparent 1px);
+  background-size: auto, 54px 54px, 54px 54px;
+}
+
+:root[data-theme="studio"] .hero-grid {
+  border-color: rgba(164, 193, 255, 0.16);
+}
+
+:root[data-theme="studio"] .availability-pill {
+  border-color: rgba(167, 243, 208, 0.7);
+  background: rgba(167, 243, 208, 0.08);
+  color: #a7f3d0;
+}
+
+:root[data-theme="studio"] .eyebrow,
+:root[data-theme="studio"] .section-kicker {
+  color: #7dd3fc;
+}
+
+:root[data-theme="studio"] h1,
+:root[data-theme="studio"] h2,
+:root[data-theme="studio"] h3 {
+  color: #f8fbff;
+  letter-spacing: -0.01em;
+}
+
+:root[data-theme="studio"] .hero-lede {
+  background: rgba(8, 17, 31, 0.54);
+  color: rgba(237, 247, 255, 0.82);
+}
+
+:root[data-theme="studio"] .portrait-panel::before {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(248, 251, 255, 0.16), transparent 28%),
+    linear-gradient(120deg, rgba(125, 211, 252, 0.2) 0 23%, transparent 23% 100%),
+    linear-gradient(106deg, transparent 0 31%, rgba(244, 114, 182, 0.1) 31% 58%, transparent 58% 100%),
+    linear-gradient(90deg, rgba(196, 181, 253, 0.22), rgba(125, 211, 252, 0.08));
+}
+
+:root[data-theme="studio"] .portrait-panel::after {
+  background: rgba(34, 211, 238, 0.18);
+}
+
+:root[data-theme="studio"] .portrait-panel > img {
+  filter: drop-shadow(-30px 24px 42px rgba(0, 0, 0, 0.62)) saturate(1.12) contrast(1.04);
+}
+
+:root[data-theme="studio"] .signal-strip {
+  border-color: rgba(164, 193, 255, 0.12);
+  background: #050b14;
+}
+
+:root[data-theme="studio"] .signal-strip span {
+  border-color: rgba(125, 211, 252, 0.24);
+  color: rgba(237, 247, 255, 0.76);
+}
+
+:root[data-theme="studio"] .page-hero,
+:root[data-theme="studio"] .section-shell,
+:root[data-theme="studio"] .portfolio-section,
+:root[data-theme="studio"] .intro-section,
+:root[data-theme="studio"] .quote-section,
+:root[data-theme="studio"] .capability-section,
+:root[data-theme="studio"] .learning-section,
+:root[data-theme="studio"] .contact-section {
+  border-color: rgba(164, 193, 255, 0.16);
+}
+
+:root[data-theme="studio"] .page-hero p:not(.section-kicker),
+:root[data-theme="studio"] .section-heading > p,
+:root[data-theme="studio"] .intro-copy > p,
+:root[data-theme="studio"] .quote-copy p,
+:root[data-theme="studio"] .contact-heading p,
+:root[data-theme="studio"] .portfolio-card p {
+  color: rgba(237, 247, 255, 0.72);
+}
+
+:root[data-theme="studio"] .portfolio-hero,
+:root[data-theme="studio"] .portfolio-section-featured,
+:root[data-theme="studio"] .home-work-section {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(125, 211, 252, 0.16), transparent 26%),
+    linear-gradient(180deg, rgba(15, 27, 45, 0.62), rgba(8, 17, 31, 0.92)),
+    var(--paper);
+}
+
+:root[data-theme="studio"] .portfolio-hero::before {
+  background:
+    linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(125, 211, 252, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+:root[data-theme="studio"] .portfolio-hero-note {
+  border-left-color: rgba(125, 211, 252, 0.38);
+}
+
+:root[data-theme="studio"] .portfolio-index a,
+:root[data-theme="studio"] .portfolio-card,
+:root[data-theme="studio"] .profile-card,
+:root[data-theme="studio"] .field-note,
+:root[data-theme="studio"] .principle-card,
+:root[data-theme="studio"] .capability-card,
+:root[data-theme="studio"] .contact-card,
+:root[data-theme="studio"] .footer-contact-card,
+:root[data-theme="studio"] .thread-diagram span,
+:root[data-theme="studio"] .hero-metrics div {
+  border-color: rgba(164, 193, 255, 0.18);
+  background:
+    linear-gradient(145deg, rgba(15, 27, 45, 0.92), rgba(23, 38, 62, 0.72)),
+    rgba(15, 27, 45, 0.88);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.24);
+}
+
+:root[data-theme="studio"] .portfolio-index a:hover,
+:root[data-theme="studio"] .portfolio-index a:focus-visible,
+:root[data-theme="studio"] .portfolio-card:hover,
+:root[data-theme="studio"] .portfolio-card:focus-within,
+:root[data-theme="studio"] .capability-card:hover,
+:root[data-theme="studio"] .profile-card:hover {
+  border-color: rgba(125, 211, 252, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.12),
+    0 22px 80px rgba(34, 211, 238, 0.12);
+}
+
+:root[data-theme="studio"] .portfolio-card::before {
+  background: linear-gradient(90deg, #7dd3fc, #c4b5fd, #f472b6);
+}
+
+:root[data-theme="studio"] .portfolio-card .portfolio-summary {
+  color: rgba(248, 251, 255, 0.88);
+}
+
+:root[data-theme="studio"] .portfolio-stats span,
+:root[data-theme="studio"] .portfolio-card-topline span,
+:root[data-theme="studio"] .portfolio-tags span,
+:root[data-theme="studio"] .project-status,
+:root[data-theme="studio"] .project-card-meta span,
+:root[data-theme="studio"] .project-card-tags span,
+:root[data-theme="studio"] .tag-list span {
+  border-color: rgba(125, 211, 252, 0.24);
+  background: rgba(125, 211, 252, 0.08);
+  color: #bae6fd;
+}
+
+:root[data-theme="studio"] .portfolio-card-topline span:last-child,
+:root[data-theme="studio"] .portfolio-tags span {
+  border-color: rgba(196, 181, 253, 0.24);
+  background: rgba(196, 181, 253, 0.09);
+  color: #ddd6fe;
+}
+
+:root[data-theme="studio"] .inline-text-link {
+  color: #7dd3fc;
+}
+
+:root[data-theme="studio"] .inline-text-link:hover,
+:root[data-theme="studio"] .inline-text-link:focus-visible {
+  color: #f472b6;
+}
+
+:root[data-theme="studio"] .quote-art img {
+  border-color: rgba(125, 211, 252, 0.26);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+}
+
+:root[data-theme="studio"] .system-footer {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(125, 211, 252, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(244, 114, 182, 0.14), transparent 30%),
+    linear-gradient(135deg, #050b14, #101a2d 64%, #07111f);
+}
+
+:root[data-theme="studio"] .system-footer::before {
+  background: linear-gradient(90deg, #7dd3fc, #c4b5fd, #f472b6, transparent);
+}
+
+:root[data-theme="studio"] .footer-contact-card > div a,
+:root[data-theme="studio"] .footer-bottom a {
+  border-color: rgba(125, 211, 252, 0.18);
+  background: rgba(125, 211, 252, 0.06);
+  color: rgba(237, 247, 255, 0.86);
+}
+
+:root[data-theme="studio"] .mobile-nav-panel {
+  border-color: rgba(125, 211, 252, 0.28);
+  background:
+    linear-gradient(135deg, rgba(8, 17, 31, 0.98), rgba(23, 38, 62, 0.96)),
+    var(--surface);
+}
+
+:root[data-theme="studio"] .mobile-nav-panel a {
+  border-bottom-color: rgba(164, 193, 255, 0.12);
+  color: #f8fbff;
+}
+
+:root[data-theme="studio"] .menu-toggle {
+  border-color: rgba(125, 211, 252, 0.28);
+  background: rgba(15, 27, 45, 0.8);
+  color: #f8fbff;
+}
