@@ -287,9 +287,17 @@ export default function Home() {
               >
                 <span className="project-status">{project.status}</span>
                 <h3>{project.name}</h3>
-                <span className="project-type">{project.type}</span>
+                <div className="project-card-meta" aria-label={`${project.name} metadata`}>
+                  <span>{project.lifecycle}</span>
+                  <span>{project.type}</span>
+                </div>
                 <p>{project.problem}</p>
-                <span className="project-outcome">{project.outcome}</span>
+                <div className="project-card-tags" aria-label={`${project.name} capability tags`}>
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <span className="project-role">{project.role}</span>
               </button>
             ))}
           </div>

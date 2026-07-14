@@ -388,21 +388,15 @@ export const contactOptions = [
     ],
   },
   {
-    label: "Collaboration",
-    description: "AI apps, business ideas, project feedback, experiments, and practical automation.",
+    label: "Collaboration / Networking",
+    description:
+      "AI apps, business ideas, project feedback, professional networking, speaking, instruction, and practical automation.",
     lines: ["Nassau, Bahamas", "Ontario, Canada"],
     actions: [
       { label: "242-535-7735", value: "242-535-7735", href: "tel:+12425357735" },
       { label: "226-973-3425", value: "226-973-3425", href: "tel:+12269733425" },
-    ],
-  },
-  {
-    label: "Professional Networking",
-    description: "Profile follow-up, speaking, instruction, advisory work, or general connection.",
-    lines: ["Garret K. Ritchie"],
-    actions: [
       { label: "garretritchie@gmail.com", value: "garretritchie@gmail.com", href: "mailto:garretritchie@gmail.com" },
-      { label: "hello@garretritchie.com", value: "hello@garretritchie.com", href: "mailto:hello@garretritchie.com" },
+      { label: "LinkedIn /garretritchie", value: "https://bs.linkedin.com/in/garretritchie", href: "https://bs.linkedin.com/in/garretritchie" },
     ],
   },
 ];
