@@ -1298,6 +1298,14 @@ blockquote cite {
   padding: 0 12px;
 }
 
+.contact-action-row > span {
+  grid-column: 1;
+  margin-top: -8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
 .linkedin-panel {
   border: 1px solid var(--line);
   background: var(--deep);
@@ -2781,6 +2789,20 @@ h1 {
     border-color var(--duration-standard) var(--ease-standard),
     background var(--duration-standard) var(--ease-standard),
     color var(--duration-standard) var(--ease-standard);
+}
+
+.footer-contact-card a {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: 56px;
+}
+
+.footer-contact-card a small {
+  color: #cfc4b6;
+  font-size: 0.78rem;
+  font-weight: 850;
 }
 
 .footer-contact-card a:hover,

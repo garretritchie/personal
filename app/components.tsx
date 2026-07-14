@@ -180,8 +180,13 @@ export function SiteFooter() {
             ))}
             <div>
               {option.actions.map((action) => (
-                <a href={action.href} key={action.value}>
-                  {action.label}
+                <a
+                  href={action.href}
+                  key={action.value}
+                  aria-label={"detail" in action ? `${action.label}, ${action.detail}` : action.label}
+                >
+                  <span>{action.label}</span>
+                  {"detail" in action ? <small>{action.detail}</small> : null}
                 </a>
               ))}
             </div>
@@ -403,7 +408,13 @@ export function ContactCards() {
           <div className="contact-actions">
             {option.actions.map((action) => (
               <div className="contact-action-row" key={action.value}>
-                <a href={action.href}>{action.label}</a>
+                <a
+                  href={action.href}
+                  aria-label={"detail" in action ? `${action.label}, ${action.detail}` : action.label}
+                >
+                  {action.label}
+                </a>
+                {"detail" in action ? <span>{action.detail}</span> : null}
                 <button type="button" onClick={() => copyValue(action.value)}>
                   {copiedValue === action.value ? "Copied" : "Copy"}
                 </button>
