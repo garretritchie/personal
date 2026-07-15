@@ -81,7 +81,7 @@ export default function Home() {
 
       <section className="section-shell quote-section" aria-labelledby="home-quote-title">
         <div className="quote-copy">
-          <p className="section-kicker">04 / Experience</p>
+          <p className="section-kicker">Experience</p>
           <h2 id="home-quote-title">Experience teaches what theory cannot.</h2>
           <p>
             Build the thing, test it in the real world, notice the friction, then make

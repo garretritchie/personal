@@ -3118,7 +3118,8 @@ body {
 /* Portfolio refinement */
 .portfolio-hero {
   position: relative;
-  max-width: none;
+  max-width: var(--content);
+  margin: 0 auto;
   border-bottom: 1px solid var(--line);
   background:
     linear-gradient(120deg, rgba(255, 250, 240, 0.84), rgba(239, 225, 204, 0.54)),
@@ -3147,9 +3148,9 @@ body {
 }
 
 .portfolio-hero h1 {
-  max-width: 880px;
-  font-size: clamp(3rem, 5vw, 5.4rem);
-  line-height: 0.94;
+  max-width: 920px;
+  font-size: clamp(2.75rem, 4.2vw, 4.75rem);
+  line-height: 1;
 }
 
 .portfolio-hero-note {
