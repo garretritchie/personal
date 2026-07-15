@@ -65,7 +65,14 @@ export function LinkedText({ text }: { text: string }) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"classic" | "studio">("classic");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const activeTheme =
+      document.documentElement.dataset.theme === "studio" ? "studio" : "classic";
+    window.queueMicrotask(() => setTheme(activeTheme));
+  }, []);
 
   useEffect(() => {
     const revealItems = Array.from(
@@ -153,6 +160,41 @@ export function SiteHeader() {
     setMenuOpen(false);
   }
 
+  function changeTheme(nextTheme: "classic" | "studio") {
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme === "studio" ? "studio" : "";
+    setMenuOpen(false);
+
+    try {
+      if (nextTheme === "studio") {
+        window.localStorage.setItem("garret-site-theme", nextTheme);
+      } else {
+        window.localStorage.removeItem("garret-site-theme");
+      }
+    } catch {}
+  }
+
+  function renderThemeSwitcher() {
+    return (
+      <div className="theme-switcher" role="group" aria-label="Visual theme">
+        <button
+          type="button"
+          aria-pressed={theme === "classic"}
+          onClick={() => changeTheme("classic")}
+        >
+          Classic
+        </button>
+        <button
+          type="button"
+          aria-pressed={theme === "studio"}
+          onClick={() => changeTheme("studio")}
+        >
+          Studio
+        </button>
+      </div>
+    );
+  }
+
   return (
     <header className="site-nav" aria-label="Site navigation">
       <Link className="brand" href="/" aria-label="Garret Ritchie home">
@@ -170,7 +212,9 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <Link className="nav-cta" href="/contact">Contact</Link>
+      <div className="desktop-theme-control">
+        {renderThemeSwitcher()}
+      </div>
       <button
         ref={menuButtonRef}
         className="menu-toggle"
@@ -199,6 +243,9 @@ export function SiteHeader() {
             {item.label}
           </Link>
         ))}
+        <div className="mobile-theme-control">
+          {renderThemeSwitcher()}
+        </div>
       </nav>
     </header>
   );
