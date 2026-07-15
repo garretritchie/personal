@@ -3121,20 +3121,11 @@ body {
   max-width: var(--content);
   margin: 0 auto;
   border-bottom: 1px solid var(--line);
-  background:
-    linear-gradient(120deg, rgba(255, 250, 240, 0.84), rgba(239, 225, 204, 0.54)),
-    var(--paper);
+  background: transparent;
 }
 
 .portfolio-hero::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background:
-    linear-gradient(90deg, rgba(216, 202, 182, 0.34) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(216, 202, 182, 0.28) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
+  display: none;
 }
 
 .portfolio-hero-layout {
@@ -3707,20 +3698,12 @@ body {
   color: rgba(237, 247, 255, 0.72);
 }
 
-:root[data-theme="studio"] .portfolio-hero,
 :root[data-theme="studio"] .portfolio-section-featured,
 :root[data-theme="studio"] .home-work-section {
   background:
     radial-gradient(circle at 18% 0%, rgba(125, 211, 252, 0.16), transparent 26%),
     linear-gradient(180deg, rgba(15, 27, 45, 0.62), rgba(8, 17, 31, 0.92)),
     var(--paper);
-}
-
-:root[data-theme="studio"] .portfolio-hero::before {
-  background:
-    linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(125, 211, 252, 0.06) 1px, transparent 1px);
-  background-size: 34px 34px;
 }
 
 :root[data-theme="studio"] .portfolio-hero-note {
