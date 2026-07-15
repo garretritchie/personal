@@ -3657,6 +3657,25 @@ body {
   filter: drop-shadow(-30px 28px 46px rgba(0, 0, 0, 0.64)) saturate(1.12) contrast(1.04);
 }
 
+/* Hero/header overlap: let Garret's portrait paint above the bar without stealing clicks. */
+.hero {
+  z-index: 130;
+}
+
+.hero-grid {
+  isolation: auto;
+}
+
+.portrait-panel {
+  z-index: 150;
+  pointer-events: none;
+}
+
+.portrait-panel > img {
+  z-index: 170;
+  pointer-events: none;
+}
+
 :root[data-theme="studio"] .signal-strip {
   border-color: rgba(164, 193, 255, 0.12);
   background: #050b14;
