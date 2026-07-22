@@ -1,9 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   contactOptions,
   navItems,
@@ -63,7 +59,7 @@ export function LinkedText({ text }: { text: string }) {
 }
 
 export function SiteHeader() {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"classic" | "studio">("classic");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -171,7 +167,9 @@ export function SiteHeader() {
       } else {
         window.localStorage.removeItem("garret-site-theme");
       }
-    } catch {}
+    } catch {
+      // Theme persistence is optional when browser storage is unavailable.
+    }
   }
 
   function renderThemeSwitcher() {
@@ -197,14 +195,14 @@ export function SiteHeader() {
 
   return (
     <header className="site-nav" aria-label="Site navigation">
-      <Link className="brand" href="/" aria-label="Garret Ritchie home">
+      <Link className="brand" to="/" aria-label="Garret Ritchie home">
         <img src="/gr-logo.png" alt="" />
         <span>Garret Ritchie</span>
       </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
           <Link
-            href={item.href}
+            to={item.href}
             key={item.href}
             aria-current={isActive(item.href) ? "page" : undefined}
           >
@@ -235,7 +233,7 @@ export function SiteHeader() {
       >
         {navItems.map((item) => (
           <Link
-            href={item.href}
+            to={item.href}
             key={item.href}
             aria-current={isActive(item.href) ? "page" : undefined}
             onClick={closeMenu}
@@ -289,7 +287,7 @@ export function SiteFooter() {
       <div className="footer-bottom">
         <span>Garret Ritchie</span>
         <a href="https://www.garretritchie.com">www.garretritchie.com</a>
-        <Link href="/#top">Back to top</Link>
+        <Link to="/#top">Back to top</Link>
       </div>
     </footer>
   );

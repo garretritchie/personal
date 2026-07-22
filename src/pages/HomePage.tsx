@@ -1,13 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import {
   SiteFooter,
   SiteHeader,
-} from "./components";
+} from "../components";
 
 const signalWords = ["Observe", "Question", "Learn", "Build", "Experience", "Improve"];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main id="top">
       <SiteHeader />
@@ -27,12 +26,12 @@ export default function Home() {
               and share what I learn along the way.
             </p>
             <div className="hero-actions" aria-label="Page actions">
-              <Link className="primary-action" href="/contact">
+              <Link className="primary-action" to="/contact">
                 Start a conversation
                 <span aria-hidden="true">-&gt;</span>
               </Link>
-              <Link className="secondary-action" href="/portfolio">View portfolio</Link>
-              <Link className="secondary-action" href="/about">About Garret</Link>
+              <Link className="secondary-action" to="/portfolio">View portfolio</Link>
+              <Link className="secondary-action" to="/about">About Garret</Link>
             </div>
           </div>
 
@@ -72,9 +71,9 @@ export default function Home() {
             <span>build</span>
           </div>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/about">About Garret</Link>
-            <Link className="secondary-action" href="/portfolio">Portfolio</Link>
-            <Link className="secondary-action" href="/capabilities">Capabilities</Link>
+            <Link className="secondary-action" to="/about">About Garret</Link>
+            <Link className="secondary-action" to="/portfolio">Portfolio</Link>
+            <Link className="secondary-action" to="/capabilities">Capabilities</Link>
           </div>
         </div>
       </section>

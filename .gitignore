@@ -13,7 +13,10 @@
 # testing
 /coverage
 
-# next.js
+# build output
+/dist/
+
+# legacy framework build caches (safe to delete after migration)
 /.next/
 /.vinext/
 /out/
@@ -31,13 +34,8 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
+# deployment and tool state
 .vercel
-
-# typescript
-next-env.d.ts
-/dist/
 /.wrangler/
 /outputs/
 /work/
-.env

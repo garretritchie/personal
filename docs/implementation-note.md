@@ -2,11 +2,11 @@
 
 ## Architecture Audit
 
-- Framework: Vinext with React 19 and Next-style `app` routing.
-- Page structure: one primary route in `app/page.tsx`, global styling in `app/globals.css`, metadata in `app/layout.tsx`.
+- Framework: Vite with React 19, TypeScript, and React Router.
+- Page structure: route components in `src/pages/`, global styling in `src/index.css`, and metadata in `index.html`.
 - Styling: CSS custom properties, Tailwind import available, no component library dependency.
 - Assets: local public images for logo, portrait cutout, original portrait, and Mark Twain quote image.
-- Deployment: Sites project configured in `.openai/hosting.json`, with Cloudflare-compatible output produced by `vinext build`.
+- Deployment: static production output in `dist/`, with Netlify configured for SPA route fallback.
 
 ## Strengths Preserved
 
