@@ -82,14 +82,6 @@ export const portfolioSections: PortfolioSection[] = [
         keyAreas: ["Algorithmic trading", "AI decision support", "Strategy testing", "Market analysis", "Risk management", "Reporting"],
       },
       {
-        name: "NYCHIA Platform",
-        summary:
-          "A unified marketplace and digital business platform built around premium access, memberships, recurring services, vendor participation, and customer experience.",
-        detail:
-          "The platform brings together the public website, member journeys, vendor management, customer administration, recurring service delivery, reporting, and internal business operations.",
-        keyAreas: ["Marketplace design", "Memberships", "Vendor management", "Customer experience", "Recurring services", "Operations"],
-      },
-      {
         name: "OwaSo Fresh Supply Platform",
         summary:
           "A digital agricultural marketplace designed to connect Bahamian farmers and produce suppliers with business buyers.",
@@ -317,42 +309,6 @@ export const projects: Project[] = [
       lessons:
         "The most useful automation often slows you down at the right moment.",
       currentStatus: "Testing and research.",
-    },
-  },
-  {
-    slug: "nychia",
-    name: "Nychia",
-    lifecycle: "Concept",
-    status: "Concept venture",
-    type: "Business model",
-    href: "#projects",
-    linkLabel: "In development",
-    tags: ["Venture design", "Positioning", "Planning", "Financial model"],
-    problem:
-      "A promising service idea needs sharper positioning, realistic economics, and a launch path before it becomes a business.",
-    role: "Founder, planner, and product strategist.",
-    outcome:
-      "A planning workspace that turns scattered thinking into a clearer venture model.",
-    caseStudy: {
-      context:
-        "Nychia is a business concept being shaped through strategy, market thinking, and operating assumptions.",
-      problem:
-        "Early ideas can feel compelling before the customer, offer, and delivery model are clear.",
-      constraints:
-        "Assumptions need to be explicit, testable, and separated from confirmed facts.",
-      role:
-        "Garret develops the concept, pressure-tests the model, and defines the launch plan.",
-      process:
-        "Document the offer, customer, pricing logic, risks, and first tests required to validate demand.",
-      keyDecisions:
-        "Treat the venture as a set of experiments rather than a finished brand.",
-      architecture:
-        "Planning and research workspace with structured notes, market questions, and financial assumptions.",
-      outcome:
-        "A more disciplined concept with clearer questions to validate.",
-      lessons:
-        "A business plan is most useful when it shows what still needs to be proven.",
-      currentStatus: "Concept validation.",
     },
   },
   {
