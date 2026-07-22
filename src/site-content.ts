@@ -90,14 +90,6 @@ export const portfolioSections: PortfolioSection[] = [
         keyAreas: ["Agricultural technology", "Digital marketplaces", "Supply-chain workflows", "Ordering", "Fulfilment", "Invoicing"],
       },
       {
-        name: "ChangePilot Construction Management App",
-        summary:
-          "A construction workflow application designed to simplify the documentation and approval of field changes.",
-        detail:
-          "ChangePilot supports change orders, field notes, approvals, handovers, checklists, pricing, supporting photographs, and client-ready reports.",
-        keyAreas: ["Construction technology", "Field documentation", "Approvals", "Change orders", "Reporting", "Mobile workflows"],
-      },
-      {
         name: "Business Renewal and Compliance Tracker",
         summary:
           "A business application concept designed to monitor recurring obligations such as licences, contracts, insurance, subscriptions, certifications, and compliance deadlines.",
@@ -133,22 +125,6 @@ export const portfolioSections: PortfolioSection[] = [
         detail:
           "The project focused on improving information architecture, navigation, content clarity, accessibility, visual presentation, and overall usability.",
         keyAreas: ["Website redesign", "Information architecture", "Accessibility", "Content strategy", "Responsive design", "Public-service UX"],
-      },
-      {
-        name: "Max Conch Bar Website",
-        summary:
-          "A website and digital-marketing experience for a Bahamian food business.",
-        detail:
-          "The site showcases the menu, location, brand personality, customer experience, and social-media content while presenting the business in a more engaging way.",
-        keyAreas: ["Hospitality web design", "Menu presentation", "Local branding", "Social integration", "Mobile UX", "Customer engagement"],
-      },
-      {
-        name: "Bahamian Cafe Website Redesign",
-        summary:
-          "A website redesign concept for a local breakfast and lunch cafe.",
-        detail:
-          "The design emphasises convenience, parking, location, affordability, freshness, healthier choices, and the cafe's connection to the surrounding business community.",
-        keyAreas: ["Restaurant UX", "Visual storytelling", "Local positioning", "Social integration", "Responsive design", "Conversion content"],
       },
       {
         name: "Bits and Bytes Website",
